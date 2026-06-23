@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harala Hotel Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+    background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,0.88);
+    z-index:-1;
+}
+
+/* HERO */
+header{
+    height:55vh;
+    background:url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=80') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+header::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero{
+    position:relative;
+    text-align:center;
+    color:#fff;
+}
+
+.hero h1{
+    font-size:55px;
+    color:#D4AF37;
+}
+
+/* NAV */
+.top-nav{
+    text-align:center;
+    margin:20px 0;
+}
+
+.top-nav button{
+    background:#fff;
+    border:2px solid #D4AF37;
+    color:#D4AF37;
+    padding:10px 18px;
+    margin:5px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.top-nav button:hover{
+    background:#D4AF37;
+    color:#fff;
+}
+
+/* SECTIONS */
+.section{
+    display:none;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.active{
+    display:block;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    color:#D4AF37;
+    margin:20px 0;
+}
+
+/* GRID FIX (NO SHIFTING) */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    align-items:start;
+}
+
+/* CARD FIX */
+.card{
+    background:#fff;
+    border:2px solid #D4AF37;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+/* IMAGE FIX */
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+/* INFO */
+.info{
+    padding:12px;
+    flex-shrink:0;
+}
+
+.item-name{
+    color:#D4AF37;
+    font-weight:700;
+}
+
+.price{
+    font-weight:bold;
+    margin-top:5px;
+}
+
+/* DETAILS (SMOOTH + STABLE) */
+.details{
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
+    padding:0 12px;
+}
+
+.card.active .details{
+    max-height:200px;
+    padding:12px;
+}
+
+.details-inner{
+    font-size:12px;
+    color:#333;
+    line-height:1.5;
+}
+
+.allergy{
+    color:#b30000;
+    font-weight:600;
+    margin-top:5px;
+}
+
+/* CALL BUTTON */
+.call-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#D4AF37;
+    padding:15px;
+    border-radius:50px;
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:35px;
+    margin-top:30px;
+    background:#111;
+    color:#fff;
+}
+
+.footer h2{
+    color:#D4AF37;
+    margin-bottom:15px;
+}
+
+.footer a{
+    color:#D4AF37;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+<h1>Harala Hotel</h1>
+<p>Tap category then item to view ingredients</p>
+</div>
+</header>
+
+<!-- NAV -->
+<div class="top-nav">
+<button onclick="show('main')">Main</button>
+<button onclick="show('dessert')">Desserts</button>
+<button onclick="show('drinks')">Drinks</button>
+</div>
+
+<!-- MAIN -->
+<div id="main" class="section active">
+<div class="section-title">Main Course</div>
+<div class="menu-grid">
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9">
+<div class="info">
+    <div class="item-name">Pizza</div>
+    <div class="price">$6.50</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Dough, tomato sauce, cheese, toppings<br>
+        <div class="allergy">⚠️ Gluten, dairy</div>
+    </div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<div class="info">
+    <div class="item-name">Burger</div>
+    <div class="price">$7.00</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Beef, bun, cheese, lettuce, sauce<br>
+        <div class="allergy">⚠️ Gluten, dairy</div>
+    </div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086">
+<div class="info">
+    <div class="item-name">Shawarma</div>
+    <div class="price">$6.00</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Chicken, garlic sauce, vegetables, wrap bread<br>
+        <div class="allergy">⚠️ Gluten, dairy</div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- DESSERTS -->
+<div id="dessert" class="section">
+<div class="section-title">Desserts</div>
+<div class="menu-grid">
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+<div class="info">
+    <div class="item-name">Ice Cream</div>
+    <div class="price">$3.00</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Milk, sugar, cream<br>
+        <div class="allergy">⚠️ Dairy</div>
+    </div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9">
+<div class="info">
+    <div class="item-name">Tiramisu</div>
+    <div class="price">$5.50</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Coffee, mascarpone, cocoa, biscuits<br>
+        <div class="allergy">⚠️ Gluten, dairy</div>
+    </div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1488900128323-21503983a07e">
+<div class="info">
+    <div class="item-name">Strawberry Gelato</div>
+    <div class="price">$4.50</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Milk, strawberries, sugar<br>
+        <div class="allergy">⚠️ Dairy</div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- DRINKS -->
+<div id="drinks" class="section">
+<div class="section-title">Drinks</div>
+<div class="menu-grid">
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87">
+<div class="info">
+    <div class="item-name">Mojito</div>
+    <div class="price">$4.00</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Mint, lime, soda, sugar<br>
+        <div class="allergy">⚠️ None</div>
+    </div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5">
+<div class="info">
+    <div class="item-name">Latte</div>
+    <div class="price">$3.50</div>
+</div>
+<div class="details">
+    <div class="details-inner">
+        Coffee, milk<br>
+        <div class="allergy">⚠️ Dairy</div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<h2>Visit Harala Hotel</h2>
+<p>📍 Harar Shash, Ethiopia</p>
+<p>📞 <a href="tel:0966746566">0966746566</a></p>
+<p>💬 <a href="https://wa.me/251966746566" target="_blank">Order on WhatsApp</a></p>
+<p style="margin-top:15px; color:#aaa; font-size:12px;">
+© 2026 Harala Hotel | Luxury Dining Experience
+</p>
+</div>
+
+<a class="call-btn" href="tel:0966746566">Call</a>
+
+<script>
+function show(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function toggle(card){
+document.querySelectorAll('.card').forEach(c=>{
+if(c !== card){
+c.classList.remove('active');
+}
+});
+card.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
