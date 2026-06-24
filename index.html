@@ -3,199 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harla Hotel Menu</title>
+<title>BARON HOTEL MENU</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* BACKGROUND */
 body{
-    background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+background:url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg') center/cover fixed;
 }
 
 body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background:rgba(255,255,255,0.88);
-    z-index:-1;
+content:'';
+position:fixed;
+inset:0;
+background:rgba(255,255,255,0.92);
+z-index:-1;
 }
 
-/* HERO */
+/* HEADER */
 header{
-    height:55vh;
-    background:url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=80') center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
+height:50vh;
+background:url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
 
 header::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.6);
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
 }
 
 .hero{
-    position:relative;
-    text-align:center;
-    color:#fff;
+text-align:center;
+color:#fff;
+position:relative;
 }
 
 .hero h1{
-    font-size:55px;
-    color:#D4AF37;
+font-size:55px;
+color:#D4AF37;
 }
 
 /* NAV */
 .top-nav{
-    text-align:center;
-    margin:20px 0;
+text-align:center;
+margin:20px 0;
 }
 
 .top-nav button{
-    background:#fff;
-    border:2px solid #D4AF37;
-    color:#D4AF37;
-    padding:10px 18px;
-    margin:5px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:600;
+background:#fff;
+border:2px solid #D4AF37;
+color:#D4AF37;
+padding:10px 18px;
+margin:5px;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
 }
 
 .top-nav button:hover{
-    background:#D4AF37;
-    color:#fff;
+background:#D4AF37;
+color:#fff;
 }
 
 /* SECTIONS */
 .section{
-    display:none;
-    width:90%;
-    max-width:1100px;
-    margin:auto;
+display:none;
+width:92%;
+max-width:1100px;
+margin:auto;
 }
 
-.active{
-    display:block;
+.active{display:block;}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
 }
 
 .section-title{
-    text-align:center;
-    font-size:28px;
-    color:#D4AF37;
-    margin:20px 0;
+text-align:center;
+font-size:28px;
+color:#D4AF37;
+margin:20px 0;
 }
 
-/* GRID FIX (NO SHIFTING) */
-.menu-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    align-items:start;
-}
-
-/* CARD FIX */
+/* CARD */
 .card{
-    background:#fff;
-    border:2px solid #D4AF37;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    height:100%;
+background:#fff;
+border:2px solid #D4AF37;
+border-radius:15px;
+overflow:hidden;
+position:relative;
 }
 
-/* IMAGE FIX */
 .card img{
-    width:100%;
-    height:170px;
-    object-fit:cover;
-    flex-shrink:0;
+width:100%;
+height:160px;
+object-fit:cover;
 }
 
-/* INFO */
 .info{
-    padding:12px;
-    flex-shrink:0;
+padding:12px;
 }
 
 .item-name{
-    color:#D4AF37;
-    font-weight:700;
+color:#D4AF37;
+font-weight:700;
 }
 
 .price{
-    font-weight:bold;
-    margin-top:5px;
+font-weight:bold;
 }
 
-/* DETAILS (SMOOTH + STABLE) */
-.details{
-    max-height:0;
-    overflow:hidden;
-    transition:0.4s ease;
-    padding:0 12px;
+/* ADD BUTTON */
+.add-btn{
+position:absolute;
+right:12px;
+bottom:12px;
+background:#D4AF37;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.card.active .details{
-    max-height:200px;
-    padding:12px;
+/* CART */
+.cart-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#D4AF37;
+padding:15px 18px;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
 }
 
-.details-inner{
-    font-size:12px;
-    color:#333;
-    line-height:1.5;
+.cart{
+position:fixed;
+bottom:0;
+right:-360px;
+width:320px;
+height:70vh;
+background:#fff;
+border-left:3px solid #D4AF37;
+transition:0.4s;
+display:flex;
+flex-direction:column;
+padding:15px;
 }
 
-.allergy{
-    color:#b30000;
-    font-weight:600;
-    margin-top:5px;
+.cart.open{right:0;}
+
+.cart-header{
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid #ddd;
+padding-bottom:10px;
 }
 
-/* CALL BUTTON */
-.call-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#D4AF37;
-    padding:15px;
-    border-radius:50px;
-    color:#111;
-    text-decoration:none;
-    font-weight:bold;
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin:8px 0;
+}
+
+.cart-item button{
+background:red;
+color:#fff;
+border:none;
+padding:2px 6px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.cart-total{
+margin-top:auto;
+font-weight:bold;
+border-top:1px solid #ddd;
+padding-top:10px;
 }
 
 /* FOOTER */
 .footer{
-    text-align:center;
-    padding:35px;
-    margin-top:30px;
-    background:#111;
-    color:#fff;
+text-align:center;
+padding:30px;
+background:#111;
+color:#fff;
+margin-top:30px;
 }
 
-.footer h2{
-    color:#D4AF37;
-    margin-bottom:15px;
+.footer h2{color:#D4AF37;}
+
+.contact span{
+display:block;
+margin:5px 0;
 }
 
-.footer a{
-    color:#D4AF37;
-    text-decoration:none;
+.icon{
+color:#D4AF37;
+margin-right:6px;
 }
 </style>
 </head>
@@ -204,12 +225,11 @@ header::before{
 
 <header>
 <div class="hero">
-<h1>Harala Hotel</h1>
-<p>Tap category then item to view ingredients</p>
+<h1>BARON HOTEL</h1>
+<p>Luxury Taste • Fresh Food • Fast Service</p>
 </div>
 </header>
 
-<!-- NAV -->
 <div class="top-nav">
 <button onclick="show('main')">Main</button>
 <button onclick="show('dessert')">Desserts</button>
@@ -219,97 +239,60 @@ header::before{
 <!-- MAIN -->
 <div id="main" class="section active">
 <div class="section-title">Main Course</div>
+
 <div class="menu-grid">
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9">
+<div class="card">
+<img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg">
 <div class="info">
-    <div class="item-name">Pizza</div>
-    <div class="price">$6.50</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Dough, tomato sauce, cheese, toppings<br>
-        <div class="allergy">⚠️ Gluten, dairy</div>
-    </div>
+<div class="item-name">Pizza</div>
+<div class="price">280 ETB</div>
+<button class="add-btn" onclick="addToCart('Pizza',280)">Add</button>
 </div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<div class="card">
+<img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg">
 <div class="info">
-    <div class="item-name">Burger</div>
-    <div class="price">$7.00</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Beef, bun, cheese, lettuce, sauce<br>
-        <div class="allergy">⚠️ Gluten, dairy</div>
-    </div>
+<div class="item-name">Burger</div>
+<div class="price">320 ETB</div>
+<button class="add-btn" onclick="addToCart('Burger',320)">Add</button>
 </div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086">
+<div class="card">
+<img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg">
 <div class="info">
-    <div class="item-name">Shawarma</div>
-    <div class="price">$6.00</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Chicken, garlic sauce, vegetables, wrap bread<br>
-        <div class="allergy">⚠️ Gluten, dairy</div>
-    </div>
+<div class="item-name">Shawarma</div>
+<div class="price">260 ETB</div>
+<button class="add-btn" onclick="addToCart('Shawarma',260)">Add</button>
 </div>
 </div>
 
 </div>
 </div>
 
-<!-- DESSERTS -->
+<!-- DESSERT -->
 <div id="dessert" class="section">
 <div class="section-title">Desserts</div>
+
 <div class="menu-grid">
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+<div class="card">
+<img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg">
 <div class="info">
-    <div class="item-name">Ice Cream</div>
-    <div class="price">$3.00</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Milk, sugar, cream<br>
-        <div class="allergy">⚠️ Dairy</div>
-    </div>
+<div class="item-name">Ice Cream</div>
+<div class="price">120 ETB</div>
+<button class="add-btn" onclick="addToCart('Ice Cream',120)">Add</button>
 </div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9">
+<div class="card">
+<img src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg">
 <div class="info">
-    <div class="item-name">Tiramisu</div>
-    <div class="price">$5.50</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Coffee, mascarpone, cocoa, biscuits<br>
-        <div class="allergy">⚠️ Gluten, dairy</div>
-    </div>
-</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1488900128323-21503983a07e">
-<div class="info">
-    <div class="item-name">Strawberry Gelato</div>
-    <div class="price">$4.50</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Milk, strawberries, sugar<br>
-        <div class="allergy">⚠️ Dairy</div>
-    </div>
+<div class="item-name">Tiramisu</div>
+<div class="price">180 ETB</div>
+<button class="add-btn" onclick="addToCart('Tiramisu',180)">Add</button>
 </div>
 </div>
 
@@ -319,65 +302,90 @@ header::before{
 <!-- DRINKS -->
 <div id="drinks" class="section">
 <div class="section-title">Drinks</div>
+
 <div class="menu-grid">
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87">
+<div class="card">
+<img src="https://images.pexels.com/photos/4051271/pexels-photo-4051271.jpeg">
 <div class="info">
-    <div class="item-name">Mojito</div>
-    <div class="price">$4.00</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Mint, lime, soda, sugar<br>
-        <div class="allergy">⚠️ None</div>
-    </div>
+<div class="item-name">Mojito</div>
+<div class="price">100 ETB</div>
+<button class="add-btn" onclick="addToCart('Mojito',100)">Add</button>
 </div>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5">
-<div class="info">
-    <div class="item-name">Latte</div>
-    <div class="price">$3.50</div>
-</div>
-<div class="details">
-    <div class="details-inner">
-        Coffee, milk<br>
-        <div class="allergy">⚠️ Dairy</div>
-    </div>
 </div>
 </div>
 
+<!-- CART BUTTON -->
+<div class="cart-btn" onclick="toggleCart()">🛒 Order</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+<div class="cart-header">
+<h3>Your Order</h3>
+<span onclick="toggleCart()">✖</span>
+</div>
+
+<div id="cart-items"></div>
+
+<div class="cart-total">
+Total: <span id="total">0</span> ETB
 </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-<h2>Visit Harala Hotel</h2>
-<p>📍 Harar Shash, Ethiopia</p>
-<p>📞 <a href="tel:0966746566">0966746566</a></p>
-<p>💬 <a href="https://wa.me/251966746566" target="_blank">Order on WhatsApp</a></p>
-<p style="margin-top:15px; color:#aaa; font-size:12px;">
-© 2026 Harala Hotel | Luxury Dining Experience
-</p>
+<h2>BARON HOTEL</h2>
+
+<div class="contact">
+<span><span class="icon">📞</span> 0966746566</span>
+<span><span class="icon">✈️</span> @Tinsaeasfaw</span>
+<span><span class="icon">📷</span> @tinsea_a</span>
 </div>
 
-<a class="call-btn" href="tel:0966746566">Call</a>
+<p>📍 Harar Shash</p>
+</div>
 
 <script>
-function show(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+let cart={};
+
+function addToCart(name,price){
+if(cart[name]) cart[name].qty++;
+else cart[name]={price,qty:1};
+
+renderCart();
+
+// AUTO OPEN CART WHEN ADD IS CLICKED
+document.getElementById("cart").classList.add("open");
 }
 
-function toggle(card){
-document.querySelectorAll('.card').forEach(c=>{
-if(c !== card){
-c.classList.remove('active');
+function renderCart(){
+let list=document.getElementById("cart-items");
+list.innerHTML="";
+let total=0;
+
+for(let name in cart){
+let item=cart[name];
+total+=item.price*item.qty;
+
+list.innerHTML+=`
+<div class="cart-item">
+<span>${name} x${item.qty}</span>
+<span>${item.price*item.qty} ETB <button onclick="delete cart['${name}'];renderCart()">X</button></span>
+</div>`;
 }
-});
-card.classList.toggle('active');
+
+document.getElementById("total").innerText=total;
+}
+
+function toggleCart(){
+document.getElementById("cart").classList.toggle("open");
+}
+
+function show(id){
+document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
 }
 </script>
 
