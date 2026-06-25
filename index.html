@@ -1,393 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BARON HOTEL MENU</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg') center/cover fixed;
-}
-
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:rgba(255,255,255,0.92);
-z-index:-1;
-}
-
-/* HEADER */
-header{
-height:50vh;
-background:url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-}
-
-header::before{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-}
-
-.hero{
-text-align:center;
-color:#fff;
-position:relative;
-}
-
-.hero h1{
-font-size:55px;
-color:#D4AF37;
-}
-
-/* NAV */
-.top-nav{
-text-align:center;
-margin:20px 0;
-}
-
-.top-nav button{
-background:#fff;
-border:2px solid #D4AF37;
-color:#D4AF37;
-padding:10px 18px;
-margin:5px;
-border-radius:25px;
-cursor:pointer;
-font-weight:600;
-}
-
-.top-nav button:hover{
-background:#D4AF37;
-color:#fff;
-}
-
-/* SECTIONS */
-.section{
-display:none;
-width:92%;
-max-width:1100px;
-margin:auto;
-}
-
-.active{display:block;}
-
-.menu-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:18px;
-}
-
-.section-title{
-text-align:center;
-font-size:28px;
-color:#D4AF37;
-margin:20px 0;
-}
-
-/* CARD */
-.card{
-background:#fff;
-border:2px solid #D4AF37;
-border-radius:15px;
-overflow:hidden;
-position:relative;
-}
-
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.info{
-padding:12px;
-}
-
-.item-name{
-color:#D4AF37;
-font-weight:700;
-}
-
-.price{
-font-weight:bold;
-}
-
-/* ADD BUTTON */
-.add-btn{
-position:absolute;
-right:12px;
-bottom:12px;
-background:#D4AF37;
-border:none;
-padding:8px 12px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* CART */
-.cart-btn{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#D4AF37;
-padding:15px 18px;
-border-radius:50px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.cart{
-position:fixed;
-bottom:0;
-right:-360px;
-width:320px;
-height:70vh;
-background:#fff;
-border-left:3px solid #D4AF37;
-transition:0.4s;
-display:flex;
-flex-direction:column;
-padding:15px;
-}
-
-.cart.open{right:0;}
-
-.cart-header{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid #ddd;
-padding-bottom:10px;
-}
-
-.cart-item{
-display:flex;
-justify-content:space-between;
-margin:8px 0;
-}
-
-.cart-item button{
-background:red;
-color:#fff;
-border:none;
-padding:2px 6px;
-border-radius:5px;
-cursor:pointer;
-}
-
-.cart-total{
-margin-top:auto;
-font-weight:bold;
-border-top:1px solid #ddd;
-padding-top:10px;
-}
-
-/* FOOTER */
-.footer{
-text-align:center;
-padding:30px;
-background:#111;
-color:#fff;
-margin-top:30px;
-}
-
-.footer h2{color:#D4AF37;}
-
-.contact span{
-display:block;
-margin:5px 0;
-}
-
-.icon{
-color:#D4AF37;
-margin-right:6px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baron Hotel Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#151514;--muted:#69645b;--paper:#fffdf8;--surface:#fff;--line:#e8e1d4;--gold:#b88724;--gold-strong:#8d6117;--forest:#173f36;--shadow:0 18px 48px rgba(21,21,20,.13);--radius:8px}
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{min-height:100vh;background:linear-gradient(180deg,rgba(255,253,248,.96),rgba(255,253,248,.98)),url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg') center/cover fixed;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5} button{min-height:44px;border:0;border-radius:var(--radius);font:inherit;cursor:pointer} button:focus-visible,a:focus-visible{outline:3px solid rgba(184,135,36,.45);outline-offset:3px}.page-shell{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .hero{position:relative;min-height:clamp(420px,72vh,680px);isolation:isolate;color:#fff;display:grid;align-items:end;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg') center/cover;transform:scale(1.03)}.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,11,10,.88),rgba(7,11,10,.62) 46%,rgba(7,11,10,.2)),linear-gradient(0deg,rgba(7,11,10,.82),rgba(7,11,10,0) 55%)}.hero-content{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:34px 0 88px}.status-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.status-pill{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:7px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.92);font-size:.9rem;font-weight:700;backdrop-filter:blur(14px)}.dot{width:8px;height:8px;border-radius:50%;background:#55d58b;box-shadow:0 0 0 6px rgba(85,213,139,.16)}h1{max-width:760px;color:#f4c65b;font-size:clamp(3rem,8vw,6.9rem);font-weight:800;letter-spacing:0;line-height:.9;text-transform:uppercase}.hero-copy{max-width:620px;margin-top:22px;color:rgba(255,255,255,.88);font-size:clamp(1rem,2vw,1.22rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.primary-action,.secondary-action{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px;text-decoration:none;border-radius:var(--radius);font-weight:800;transition:transform .18s ease,background .18s ease,color .18s ease}.primary-action{background:#f4c65b;color:#1b1609}.secondary-action{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(14px)}.primary-action:hover,.secondary-action:hover{transform:translateY(-2px)}
+    .quick-panel{position:relative;z-index:2;width:min(1180px,calc(100% - 32px));margin:-48px auto 34px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}.quick-panel div{padding:20px;border-right:1px solid var(--line)}.quick-panel div:last-child{border-right:0}.quick-panel strong{display:block;margin-bottom:3px;color:var(--forest);font-size:1.08rem}.quick-panel span{color:var(--muted);font-size:.94rem}.menu-toolbar{position:sticky;top:0;z-index:8;margin-bottom:26px;padding:12px 0;background:rgba(255,253,248,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(232,225,212,.7)}.toolbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(1180px,calc(100% - 32px));margin:0 auto}.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;padding:0 16px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:800;transition:background .18s ease,color .18s ease,border-color .18s ease}.tab[aria-selected="true"]{border-color:var(--forest);background:var(--forest);color:#fff}.order-chip{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-weight:800;white-space:nowrap}
+    .menu-header{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px}.eyebrow{color:var(--gold-strong);font-size:.76rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h2{margin-top:4px;color:var(--ink);font-size:clamp(1.7rem,4vw,3rem);letter-spacing:0;line-height:1.05}.menu-note{max-width:440px;color:var(--muted);font-weight:500}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:48px}.menu-card{display:grid;grid-template-rows:210px 1fr;min-height:410px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:0 10px 28px rgba(21,21,20,.08);opacity:0;transform:translateY(16px);animation:rise .52s ease forwards}.menu-card:nth-child(2){animation-delay:.08s}.menu-card:nth-child(3){animation-delay:.16s}.image-wrap{position:relative;overflow:hidden;background:#ddd6c8}.image-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .42s ease}.menu-card:hover .image-wrap img{transform:scale(1.05)}.badge{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:999px;background:rgba(21,21,20,.76);color:#fff;font-size:.75rem;font-weight:800;backdrop-filter:blur(10px)}.card-body{display:grid;gap:14px;padding:16px}.item-top{display:flex;align-items:start;justify-content:space-between;gap:14px}.item-name{color:var(--ink);font-size:1.12rem;font-weight:800;line-height:1.18}.price{color:var(--gold-strong);font-weight:800;white-space:nowrap}.description{color:var(--muted);font-size:.95rem}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}.meta{color:var(--forest);font-size:.82rem;font-weight:800}.add-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:108px;padding:0 14px;background:var(--ink);color:#fff;font-weight:800;transition:transform .18s ease,background .18s ease}.add-btn:hover{background:var(--forest);transform:translateY(-2px)}
+    .cart-toggle{position:fixed;right:20px;bottom:20px;z-index:20;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 18px;background:var(--forest);color:#fff;box-shadow:var(--shadow);font-weight:800;transition:transform .18s ease,background .18s ease}.cart-toggle:hover{transform:translateY(-2px);background:#0f2d27}.cart-count{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:#f4c65b;color:#1b1609;font-size:.84rem}.scrim{position:fixed;inset:0;z-index:30;background:rgba(10,12,11,.46);opacity:0;pointer-events:none;transition:opacity .22s ease}.scrim.open{opacity:1;pointer-events:auto}.cart{position:fixed;top:0;right:0;z-index:40;display:flex;flex-direction:column;width:min(420px,100%);height:100dvh;padding:18px;background:var(--surface);box-shadow:-24px 0 60px rgba(21,21,20,.24);transform:translateX(105%);transition:transform .26s ease}.cart.open{transform:translateX(0)}.cart-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}.cart-header h3{font-size:1.25rem}.icon-btn{display:inline-grid;place-items:center;width:44px;padding:0;background:#f3efe7;color:var(--ink)}.cart-items{flex:1;overflow-y:auto;padding:12px 0}.empty-state{display:grid;place-items:center;min-height:260px;color:var(--muted);text-align:center}.empty-state strong{display:block;color:var(--ink);font-size:1.05rem}.cart-line{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-line-title{font-weight:800}.cart-line-price{color:var(--gold-strong);font-weight:800;text-align:right}.quantity-row{display:inline-flex;align-items:center;gap:8px;margin-top:8px}.quantity-row button{display:inline-grid;place-items:center;width:36px;min-height:36px;background:#f3efe7;color:var(--ink);font-weight:800}.quantity-row span{min-width:24px;text-align:center;font-weight:800}.cart-summary{display:grid;gap:12px;padding-top:14px;border-top:1px solid var(--line)}.summary-row{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-weight:700}.summary-row.total{color:var(--ink);font-size:1.22rem;font-weight:800}.checkout-btn{width:100%;min-height:50px;background:var(--gold);color:#171206;font-weight:900;transition:background .18s ease}.checkout-btn:hover{background:#f4c65b}
+    .footer{margin-top:20px;background:#111514;color:#fff}.footer-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:34px 0;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}.footer h2{color:#f4c65b;font-size:1.8rem}.footer p,.footer a{color:rgba(255,255,255,.78);text-decoration:none}.footer-list{display:grid;gap:8px;margin-top:10px}.footer-label{margin-bottom:8px;color:#f4c65b;font-weight:800}svg{flex:0 0 auto}@keyframes rise{to{opacity:1;transform:translateY(0)}}@media(max-width:920px){.quick-panel,.footer-inner{grid-template-columns:1fr}.quick-panel div{border-right:0;border-bottom:1px solid var(--line)}.quick-panel div:last-child{border-bottom:0}.menu-header,.toolbar-inner{align-items:stretch;flex-direction:column}.order-chip{justify-content:center}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.hero{min-height:650px}.hero-content{padding-bottom:96px}.hero-actions a{width:100%;justify-content:center}.menu-grid{grid-template-columns:1fr}.menu-card{grid-template-rows:190px 1fr;min-height:380px}.cart-toggle{right:14px;bottom:14px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  
+    /* Final polish: persuasive hero, bottom trust section, and motion */
+    .hero { min-height: clamp(660px, 92vh, 820px); align-items: center; }
+    .hero::before { animation: heroBreath 18s ease-in-out infinite alternate; }
+    .hero-glow { position: absolute; width: 420px; height: 420px; right: 8%; top: 16%; z-index: -1; border-radius: 50%; background: radial-gradient(circle, rgba(246,216,121,.2), transparent 66%); filter: blur(10px); animation: floatGlow 9s ease-in-out infinite; }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 10px; min-height: 38px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.26); border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.92); font-size: .9rem; font-weight: 800; backdrop-filter: blur(16px); animation: fadeUp .7s ease both; }
+    .pulse-dot { width: 9px; height: 9px; border-radius: 50%; background: #5ee592; box-shadow: 0 0 0 0 rgba(94,229,146,.48); animation: pulse 1.8s ease-out infinite; }
+    .hero-content h1 { animation: fadeUp .75s .08s ease both; }
+    .hero-copy { max-width: 690px; font-weight: 500; animation: fadeUp .75s .16s ease both; }
+    .hero-actions { animation: fadeUp .75s .24s ease both; }
+    .hero-proof { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; width: min(760px,100%); margin-top: 42px; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: var(--radius); background: rgba(255,255,255,.16); backdrop-filter: blur(16px); animation: fadeUp .75s .32s ease both; }
+    .hero-proof div { padding: 16px; background: rgba(255,255,255,.08); }
+    .hero-proof strong { display: block; color: #fff; font-size: 1.1rem; }
+    .hero-proof span { color: rgba(255,255,255,.76); font-size: .88rem; }
+    .scroll-cue { position: absolute; left: 50%; bottom: 28px; width: 28px; height: 44px; border: 1px solid rgba(255,255,255,.48); border-radius: 999px; transform: translateX(-50%); }
+    .scroll-cue::after { content: ''; position: absolute; left: 50%; top: 9px; width: 4px; height: 8px; border-radius: 999px; background: #fff; transform: translateX(-50%); animation: scrollCue 1.6s ease-in-out infinite; }
+    .quick-panel { display: none; }
+    .experience-band { width: min(1180px, calc(100% - 32px)); margin: 12px auto 44px; padding: 42px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .experience-header { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .experience-header p:last-child { max-width: 520px; color: var(--muted); font-weight: 600; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+    .service-card { position: relative; min-height: 168px; padding: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.82); box-shadow: 0 12px 28px rgba(21,21,20,.07); animation: serviceFloat 7s ease-in-out infinite; }
+    .service-card:nth-child(2) { animation-delay: .8s; }
+    .service-card:nth-child(3) { animation-delay: 1.6s; }
+    .service-card::after { content: ''; position: absolute; width: 96px; height: 96px; right: -32px; top: -32px; border-radius: 50%; background: rgba(246,216,121,.28); }
+    .service-icon { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-bottom: 18px; border-radius: var(--radius); background: var(--forest); color: #fff; font-weight: 900; }
+    .service-card strong { display: block; color: var(--ink); font-size: 1.12rem; margin-bottom: 6px; }
+    .service-card span { color: var(--muted); font-weight: 600; }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: 0 18px 42px rgba(21,21,20,.13); }
+    @keyframes heroBreath { from { transform: scale(1.02); } to { transform: scale(1.08); } }
+    @keyframes floatGlow { 0%,100% { transform: translate3d(0,0,0); opacity: .72; } 50% { transform: translate3d(-24px,24px,0); opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(94,229,146,.46); } 70% { box-shadow: 0 0 0 10px rgba(94,229,146,0); } 100% { box-shadow: 0 0 0 0 rgba(94,229,146,0); } }
+    @keyframes scrollCue { 0% { opacity: 0; transform: translate(-50%,0); } 35% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,15px); } }
+    @keyframes serviceFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @media (max-width: 920px) { .hero-proof, .service-grid { grid-template-columns: 1fr; } .experience-header { align-items: stretch; flex-direction: column; } }
+    @media (max-width: 640px) { .hero { min-height: 720px; } .hero-proof { margin-top: 28px; } }
+  </style>
 </head>
-
 <body>
-
-<header>
-<div class="hero">
+<header class="hero">
+<div class="hero-glow" aria-hidden="true"></div>
+<div class="hero-content">
+<div class="hero-kicker"><span class="pulse-dot" aria-hidden="true"></span> Open for fresh orders today</div>
 <h1>BARON HOTEL</h1>
-<p>Luxury Taste • Fresh Food • Fast Service</p>
+<p class="hero-copy">Settle in for a polished hotel dining experience: fresh classics, refreshing drinks, and attentive service made simple from the first tap.</p>
+<div class="hero-actions">
+<a class="primary-action" href="#menu">Explore the Menu</a>
+<a class="secondary-action" href="tel:0966746566">Reserve or Call</a>
 </div>
+<div class="hero-proof" aria-label="Dining highlights">
+<div><strong>Freshly prepared</strong><span>Hot plates and chilled drinks made when you order.</span></div>
+<div><strong>Clear prices</strong><span>Build your order with totals visible at every step.</span></div>
+<div><strong>Hotel comfort</strong><span>Professional service for dine-in, pickup, and guests.</span></div>
+</div>
+</div>
+<span class="scroll-cue" aria-hidden="true"></span>
 </header>
-
-<div class="top-nav">
-<button onclick="show('main')">Main</button>
-<button onclick="show('dessert')">Desserts</button>
-<button onclick="show('drinks')">Drinks</button>
+<nav class="menu-toolbar" aria-label="Menu categories"><div class="toolbar-inner"><div class="tabs" role="tablist" aria-label="Choose a menu category"><button class="tab" type="button" role="tab" aria-selected="true" data-category="main">Main Course</button><button class="tab" type="button" role="tab" aria-selected="false" data-category="dessert">Desserts</button><button class="tab" type="button" role="tab" aria-selected="false" data-category="drinks">Drinks</button></div><button class="order-chip" type="button" id="openCartTop"><span id="toolbarTotal">0 ETB</span></button></div></nav>
+<main id="menu" class="page-shell"><section class="menu-header"><div><p class="eyebrow">Selected Menu</p><h2 id="categoryTitle">Main Course</h2></div><p class="menu-note" id="categoryNote">Comforting hotel classics served hot, filling, and ready for a relaxed meal.</p></section><section class="menu-grid" id="menuGrid" aria-live="polite"></section></main>
+<button class="cart-toggle" type="button" id="cartToggle" aria-expanded="false" aria-controls="cart">Order <span class="cart-count" id="cartCount">0</span></button><div class="scrim" id="scrim" hidden></div><aside class="cart" id="cart" aria-label="Your order" aria-hidden="true"><div class="cart-header"><div><p class="eyebrow">Baron Hotel</p><h3>Your Order</h3></div><button class="icon-btn" type="button" id="closeCart" aria-label="Close order">X</button></div><div class="cart-items" id="cartItems"></div><div class="cart-summary"><div class="summary-row"><span>Items</span><span id="summaryItems">0</span></div><div class="summary-row total"><span>Total</span><span><span id="summaryTotal">0</span> ETB</span></div><button class="checkout-btn" type="button">Send Order</button></div></aside>
+<section class="experience-band" aria-label="Why guests choose Baron Hotel">
+<div class="experience-header">
+<div><p class="eyebrow">Guest experience</p><h2>Everything feels easy from order to last bite.</h2></div>
+<p>Practical details now sit near the bottom, so the first impression can sell the atmosphere while this section reassures guests before they call or order.</p>
 </div>
-
-<!-- MAIN -->
-<div id="main" class="section active">
-<div class="section-title">Main Course</div>
-
-<div class="menu-grid">
-
-<div class="card">
-<img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg">
-<div class="info">
-<div class="item-name">Pizza</div>
-<div class="price">280 ETB</div>
-<button class="add-btn" onclick="addToCart('Pizza',280)">Add</button>
+<div class="service-grid">
+<article class="service-card"><span class="service-icon">01</span><strong>Fast Service</strong><span>Quick table flow, easy ordering, and visible totals help guests decide without friction.</span></article>
+<article class="service-card"><span class="service-icon">02</span><strong>Signature Favorites</strong><span>Pizza, burger, shawarma, desserts, and a refreshed real mojito card stay easy to find.</span></article>
+<article class="service-card"><span class="service-icon">03</span><strong>Direct Contact</strong><span>Call 0966746566 or message @Tinsaeasfaw for reservations, pickup, and guest support.</span></article>
 </div>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg">
-<div class="info">
-<div class="item-name">Burger</div>
-<div class="price">320 ETB</div>
-<button class="add-btn" onclick="addToCart('Burger',320)">Add</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg">
-<div class="info">
-<div class="item-name">Shawarma</div>
-<div class="price">260 ETB</div>
-<button class="add-btn" onclick="addToCart('Shawarma',260)">Add</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- DESSERT -->
-<div id="dessert" class="section">
-<div class="section-title">Desserts</div>
-
-<div class="menu-grid">
-
-<div class="card">
-<img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg">
-<div class="info">
-<div class="item-name">Ice Cream</div>
-<div class="price">120 ETB</div>
-<button class="add-btn" onclick="addToCart('Ice Cream',120)">Add</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg">
-<div class="info">
-<div class="item-name">Tiramisu</div>
-<div class="price">180 ETB</div>
-<button class="add-btn" onclick="addToCart('Tiramisu',180)">Add</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- DRINKS -->
-<div id="drinks" class="section">
-<div class="section-title">Drinks</div>
-
-<div class="menu-grid">
-
-<div class="card">
-<img src="https://images.pexels.com/photos/4051271/pexels-photo-4051271.jpeg">
-<div class="info">
-<div class="item-name">Mojito</div>
-<div class="price">100 ETB</div>
-<button class="add-btn" onclick="addToCart('Mojito',100)">Add</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- CART BUTTON -->
-<div class="cart-btn" onclick="toggleCart()">🛒 Order</div>
-
-<!-- CART -->
-<div class="cart" id="cart">
-<div class="cart-header">
-<h3>Your Order</h3>
-<span onclick="toggleCart()">✖</span>
-</div>
-
-<div id="cart-items"></div>
-
-<div class="cart-total">
-Total: <span id="total">0</span> ETB
-</div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-<h2>BARON HOTEL</h2>
-
-<div class="contact">
-<span><span class="icon">📞</span> 0966746566</span>
-<span><span class="icon">✈️</span> @Tinsaeasfaw</span>
-<span><span class="icon">📷</span> @tinsea_a</span>
-</div>
-
-<p>📍 Harar Shash</p>
-</div>
-
+</section>
+<footer class="footer"><div class="footer-inner"><div><h2>BARON HOTEL</h2><p>Luxury taste, fresh food, and fast service in Harar Shash.</p></div><div><p class="footer-label">Contact</p><div class="footer-list"><a href="tel:0966746566">0966746566</a><a href="https://t.me/Tinsaeasfaw">@Tinsaeasfaw</a><a href="https://instagram.com/tinsea_a">@tinsea_a</a></div></div><div><p class="footer-label">Location</p><p>Harar Shash</p></div></div></footer>
 <script>
-let cart={};
-
-function addToCart(name,price){
-if(cart[name]) cart[name].qty++;
-else cart[name]={price,qty:1};
-
-renderCart();
-
-// AUTO OPEN CART WHEN ADD IS CLICKED
-document.getElementById("cart").classList.add("open");
-}
-
-function renderCart(){
-let list=document.getElementById("cart-items");
-list.innerHTML="";
-let total=0;
-
-for(let name in cart){
-let item=cart[name];
-total+=item.price*item.qty;
-
-list.innerHTML+=`
-<div class="cart-item">
-<span>${name} x${item.qty}</span>
-<span>${item.price*item.qty} ETB <button onclick="delete cart['${name}'];renderCart()">X</button></span>
-</div>`;
-}
-
-document.getElementById("total").innerText=total;
-}
-
-function toggleCart(){
-document.getElementById("cart").classList.toggle("open");
-}
-
-function show(id){
-document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-}
+const menuData={main:{title:"Main Course",note:"Comforting hotel classics served hot, filling, and ready for a relaxed meal.",items:[{name:"Pizza",price:280,image:"https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg",badge:"House favorite",meta:"Crisp crust",description:"Golden crust, melted cheese, and a generous classic topping blend."},{name:"Burger",price:320,image:"https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",badge:"Best seller",meta:"Juicy patty",description:"Stacked with a tender patty, fresh garnish, and a rich hotel sauce."},{name:"Shawarma",price:260,image:"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",badge:"Quick bite",meta:"Fresh wrap",description:"Soft wrap filled with seasoned slices, crisp vegetables, and sauce."}]},dessert:{title:"Desserts",note:"Sweet finishes for coffee breaks, family tables, and late-night cravings.",items:[{name:"Ice Cream",price:120,image:"https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg",badge:"Cold treat",meta:"Creamy",description:"Smooth scoops served chilled with a clean, refreshing finish."},{name:"Tiramisu",price:180,image:"https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg",badge:"Rich dessert",meta:"Coffee notes",description:"Layered cream, soft cake, and a delicate coffee cocoa finish."}]},drinks:{title:"Drinks",note:"Cool, bright drinks prepared for refreshment with your meal.",items:[{name:"Mojito",price:100,image:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/15-09-26-RalfR-WLC-0072.jpg/800px-15-09-26-RalfR-WLC-0072.jpg",badge:"Fresh mint",meta:"Lime and mint",description:"A real mojito-style glass with mint, lime, ice, and a crisp sparkling finish."}]}};
+const cart=new Map(),grid=document.getElementById("menuGrid"),tabs=document.querySelectorAll(".tab"),categoryTitle=document.getElementById("categoryTitle"),categoryNote=document.getElementById("categoryNote"),cartPanel=document.getElementById("cart"),scrim=document.getElementById("scrim"),cartToggle=document.getElementById("cartToggle"),cartItems=document.getElementById("cartItems"),summaryItems=document.getElementById("summaryItems"),summaryTotal=document.getElementById("summaryTotal"),toolbarTotal=document.getElementById("toolbarTotal"),cartCount=document.getElementById("cartCount");
+function money(value){return new Intl.NumberFormat("en-US").format(value)}
+function renderMenu(category){const section=menuData[category];categoryTitle.textContent=section.title;categoryNote.textContent=section.note;grid.innerHTML=section.items.map(item=>' <article class="menu-card"><div class="image-wrap"><img src="'+item.image+'" alt="'+item.name+'"><span class="badge">'+item.badge+'</span></div><div class="card-body"><div class="item-top"><h3 class="item-name">'+item.name+'</h3><p class="price">'+money(item.price)+' ETB</p></div><p class="description">'+item.description+'</p><div class="card-bottom"><span class="meta">'+item.meta+'</span><button class="add-btn" type="button" data-name="'+item.name+'" data-price="'+item.price+'">Add</button></div></div></article>').join("")}
+function setCategory(category){tabs.forEach(tab=>tab.setAttribute("aria-selected",String(tab.dataset.category===category)));renderMenu(category)}
+function addToCart(name,price){const existing=cart.get(name);cart.set(name,{price,qty:existing?existing.qty+1:1});renderCart();openCart()}
+function updateQty(name,delta){const item=cart.get(name);if(!item)return;const next=item.qty+delta;if(next<=0)cart.delete(name);else cart.set(name,{...item,qty:next});renderCart()}
+function cartTotals(){let items=0,total=0;cart.forEach(item=>{items+=item.qty;total+=item.price*item.qty});return{items,total}}
+function renderCart(){const totals=cartTotals();summaryItems.textContent=totals.items;summaryTotal.textContent=money(totals.total);toolbarTotal.textContent=money(totals.total)+" ETB";cartCount.textContent=totals.items;if(!totals.items){cartItems.innerHTML='<div class="empty-state"><p><strong>Your order is empty</strong>Add something from the menu to start.</p></div>';return}cartItems.innerHTML=Array.from(cart.entries()).map(([name,item])=>'<div class="cart-line"><div><p class="cart-line-title">'+name+'</p><div class="quantity-row" aria-label="'+name+' quantity"><button type="button" data-action="decrease" data-name="'+name+'" aria-label="Remove one '+name+'">-</button><span>'+item.qty+'</span><button type="button" data-action="increase" data-name="'+name+'" aria-label="Add one '+name+'">+</button></div></div><p class="cart-line-price">'+money(item.price*item.qty)+' ETB</p></div>').join("")}
+function openCart(){cartPanel.classList.add("open");scrim.classList.add("open");scrim.hidden=false;cartPanel.setAttribute("aria-hidden","false");cartToggle.setAttribute("aria-expanded","true")}
+function closeCart(){cartPanel.classList.remove("open");scrim.classList.remove("open");cartPanel.setAttribute("aria-hidden","true");cartToggle.setAttribute("aria-expanded","false");setTimeout(()=>{if(!scrim.classList.contains("open"))scrim.hidden=true},220)}
+tabs.forEach(tab=>tab.addEventListener("click",()=>setCategory(tab.dataset.category)));grid.addEventListener("click",event=>{const button=event.target.closest(".add-btn");if(button)addToCart(button.dataset.name,Number(button.dataset.price))});cartItems.addEventListener("click",event=>{const button=event.target.closest("button[data-action]");if(button)updateQty(button.dataset.name,button.dataset.action==="increase"?1:-1)});document.getElementById("openCartTop").addEventListener("click",openCart);cartToggle.addEventListener("click",openCart);document.getElementById("closeCart").addEventListener("click",closeCart);scrim.addEventListener("click",closeCart);document.addEventListener("keydown",event=>{if(event.key==="Escape")closeCart()});renderMenu("main");renderCart();
 </script>
-
 </body>
 </html>
