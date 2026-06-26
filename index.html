@@ -1,6 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+  <meta charset="UTF-8">
+  <title>Hotel Menu</title>
+</head>
+
+<body style="font-family:Arial;background:#fff9ee;padding:20px">
+
+<h1>🍽️ Order Menu</h1>
+
+<button onclick="sendOrder('Burger',1)">🍔 Burger</button>
+<button onclick="sendOrder('Pizza',1)">🍕 Pizza</button>
+<button onclick="sendOrder('Shawarma',2)">🌯 Shawarma</button>
+<button onclick="sendOrder('Coffee',3)">☕ Coffee</button>
+<button onclick="sendOrder('Tea',3)">🍵 Tea</button>
+
+<script>
+
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbwsjtb-jFaX8g-Etk2u9D_eYd1Y9ybNGcIK5gk0RrEf0jv20xZvwmMcmynkukae6gj2Kw/exec";
+
+/* SEND ORDER TO GOOGLE SHEET */
+function sendToSheet(order){
+  fetch(SHEET_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(order)
+  }).catch(err=>console.log(err));
+}
+
+/* MAIN ORDER FUNCTION */
+function sendOrder(item, table){
+
+  let order = {
+    id: "BRN-" + Date.now(),
+    type: "Contactless Order",
+    status: "New",
+    time: new Date().toLocaleString(),
+    details: {
+      item: item,
+      table: table
+    }
+  };
+
+  sendToSheet(order);
+  alert(item + " sent to kitchen!");
+}
+
+</script>
+
+</body>
+</html>
+  <head>
   <a href="https://lyricszfx-a11y.github.io/desk-menu/" class="menu-btn">
    Open Table Menu
   </a>
