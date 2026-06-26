@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <a href="https://lyricszfx-a11y.github.io/desk-menu/" class="menu-btn">
+   Open Table Menu
+  </a>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baron Hotel Digital Menu</title>
@@ -10,35 +13,49 @@
   <style>
     :root{--ink:#151413;--muted:#696157;--paper:#fff9ee;--surface:#fff;--line:#e9decc;--gold:#bd8427;--gold-soft:#f6d37a;--forest:#173e35;--mint:#74bf92;--rose:#984232;--blue:#315f7c;--shadow:0 18px 54px rgba(21,20,19,.14);--radius:8px}
     *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{min-height:100vh;background:linear-gradient(180deg,#fffaf0,#fbf0e0);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5} body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 12% 12%,rgba(246,211,122,.28),transparent 25%),radial-gradient(circle at 86% 4%,rgba(116,191,146,.2),transparent 25%)} button,input,select,textarea{font:inherit} button{min-height:44px;border:0;border-radius:var(--radius);cursor:pointer} input,select,textarea{width:100%;min-height:44px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;color:var(--ink);padding:0 12px} textarea{min-height:92px;padding:12px;resize:vertical} button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(189,132,39,.38);outline-offset:3px} a{color:inherit}.shell{width:min(1180px,calc(100% - 32px));margin:0 auto}.eyebrow{color:var(--gold);font-size:.76rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}h1,h2,h3{letter-spacing:0;line-height:1.05}h2{font-size:clamp(1.8rem,4vw,3rem)}svg{flex:0 0 auto}.muted{color:var(--muted)}
-    .hero{position:relative;min-height:clamp(680px,94vh,860px);display:grid;align-items:center;color:#fff;isolation:isolate;overflow:hidden}.hero::before{content:"";position:absolute;inset:0;z-index:-3;background:url("https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg") center/cover;animation:heroBreath 18s ease-in-out infinite alternate}.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,10,9,.92),rgba(7,10,9,.64) 48%,rgba(7,10,9,.22)),linear-gradient(0deg,rgba(7,10,9,.76),rgba(7,10,9,0) 58%)}.hero-glow{position:absolute;width:430px;height:430px;right:7%;top:16%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(246,211,122,.21),transparent 66%);filter:blur(10px);animation:floatGlow 9s ease-in-out infinite}.hero-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:70px 0 110px}.kicker{display:inline-flex;align-items:center;gap:10px;min-height:38px;padding:8px 13px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(255,255,255,.1);font-weight:900;backdrop-filter:blur(16px);animation:fadeUp .7s ease both}.pulse-dot{width:9px;height:9px;border-radius:50%;background:#5ee592;animation:pulse 1.8s ease-out infinite}h1{max-width:860px;margin-top:24px;color:#f8d676;font-size:clamp(3.2rem,9vw,7.4rem);font-weight:900;text-transform:uppercase;animation:fadeUp .75s .08s ease both}.hero-copy{max-width:720px;margin-top:24px;color:rgba(255,255,255,.9);font-size:clamp(1.05rem,2vw,1.28rem);font-weight:500;animation:fadeUp .75s .16s ease both}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;animation:fadeUp .75s .24s ease both}.action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 18px;border-radius:var(--radius);text-decoration:none;font-weight:900;transition:transform .18s ease,background .18s ease}.action.primary{background:var(--gold-soft);color:#1b1609;box-shadow:0 14px 36px rgba(246,211,122,.25)}.action.secondary{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.1);color:#fff;backdrop-filter:blur(14px)}.action:hover{transform:translateY(-3px)}.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;width:min(960px,100%);margin-top:42px;overflow:hidden;border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);background:rgba(255,255,255,.16);backdrop-filter:blur(16px);animation:fadeUp .75s .32s ease both}.hero-proof div{padding:16px;background:rgba(255,255,255,.08)}.hero-proof strong{display:block;color:#fff;font-size:1.05rem}.hero-proof span{color:rgba(255,255,255,.76);font-size:.88rem}.scroll-cue{position:absolute;left:50%;bottom:28px;width:28px;height:44px;border:1px solid rgba(255,255,255,.48);border-radius:999px;transform:translateX(-50%)}.scroll-cue::after{content:"";position:absolute;left:50%;top:9px;width:4px;height:8px;border-radius:999px;background:#fff;transform:translateX(-50%);animation:scrollCue 1.6s ease-in-out infinite}
-    .qr-band{position:relative;z-index:2;width:min(1180px,calc(100% - 32px));margin:-54px auto 32px;display:grid;grid-template-columns:1fr 180px;gap:18px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.92);box-shadow:var(--shadow);backdrop-filter:blur(16px)}.qr-band strong{display:block;font-size:1.25rem}.qr-box{display:grid;place-items:center;min-height:150px;border:1px dashed #cdbfaa;border-radius:var(--radius);background:#fff}.qr-box img{width:132px;height:132px}.qr-note{margin-top:6px;color:var(--muted);font-weight:600}.lang-toggle{display:inline-flex;gap:6px;margin-top:12px}.lang-toggle button{min-height:38px;padding:0 12px;border:1px solid var(--line);background:#fff;font-weight:900}.lang-toggle button.active{background:var(--forest);color:#fff;border-color:var(--forest)}
-    .toolbar{position:sticky;top:0;z-index:9;padding:12px 0;margin-bottom:26px;background:rgba(255,249,238,.9);border-bottom:1px solid rgba(233,222,204,.82);backdrop-filter:blur(18px)}.toolbar-inner{display:grid;grid-template-columns:1.2fr auto;gap:12px;align-items:center}.search-wrap{display:grid;grid-template-columns:1fr 170px 170px;gap:10px}.chip-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.chip-row::-webkit-scrollbar{display:none}.chip{flex:0 0 auto;min-height:42px;padding:0 14px;border:1px solid var(--line);background:#fff;font-weight:900;white-space:nowrap;transition:transform .18s ease,background .18s ease}.chip:hover{transform:translateY(-1px)}.chip.active{background:var(--forest);color:#fff;border-color:var(--forest)}.order-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line);background:#fff;font-weight:900;white-space:nowrap}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:28px auto 18px}.section-head p:last-child{max-width:540px;color:var(--muted);font-weight:600}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:34px}.card{display:grid;grid-template-rows:214px 1fr;min-height:430px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 10px 30px rgba(21,20,19,.08);animation:cardEnter .58s cubic-bezier(.2,.9,.2,1) both;transition:transform .18s ease,box-shadow .18s ease}.card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(21,20,19,.13)}.image-wrap{position:relative;overflow:hidden;background:#ddd6c8}.image-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}.card:hover img{transform:scale(1.06)}.badge{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:999px;background:rgba(21,20,19,.78);color:#fff;font-size:.75rem;font-weight:900;backdrop-filter:blur(10px)}.card-body{display:grid;gap:12px;padding:16px}.item-top{display:flex;justify-content:space-between;gap:12px}.item-name{font-size:1.14rem;font-weight:900}.price{color:var(--gold);font-weight:900;white-space:nowrap}.desc{color:var(--muted);font-size:.95rem}.rating{display:flex;align-items:center;gap:8px;color:#9a641a;font-weight:900}.meta-row{display:flex;gap:8px;flex-wrap:wrap}.mini{display:inline-flex;align-items:center;min-height:28px;padding:0 8px;border-radius:999px;background:#f5efe4;color:var(--forest);font-size:.78rem;font-weight:900}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}.add-btn{display:inline-flex;align-items:center;justify-content:center;min-width:112px;padding:0 14px;background:var(--ink);color:#fff;font-weight:900}.add-btn:hover{background:var(--forest)}.no-results{grid-column:1/-1;padding:28px;border:1px dashed #d2c3ad;border-radius:var(--radius);background:rgba(255,255,255,.76);color:var(--muted);font-weight:700;text-align:center}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:34px}.panel{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.86);box-shadow:0 10px 28px rgba(21,20,19,.07);padding:18px}.panel h3{margin-bottom:8px}.panel p{color:var(--muted);font-weight:600}.form-grid{display:grid;gap:10px}.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}.status{min-height:28px;color:var(--forest);font-weight:900}.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pill{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;background:#f5efe4;color:var(--forest);font-weight:900;font-size:.84rem}.review-list{display:grid;gap:10px;margin-top:12px}.review{padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.loyalty-card{display:grid;gap:10px}.progress{height:10px;border-radius:999px;background:#eadfcd;overflow:hidden}.progress span{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--gold),var(--mint));transition:width .3s ease}.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dashboard-list{display:grid;gap:10px;max-height:360px;overflow:auto}.dash-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.dash-row small{color:var(--muted);font-weight:700}.toggle{min-height:34px;padding:0 10px;background:#f2ece2;font-weight:900}.toggle.off{background:#f4d7d2;color:#842e20}.live-dot{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-weight:900}.live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#48c77b;animation:pulse 1.8s ease-out infinite}
+    .hero{position:relative;min-height:clamp(680px,94vh,860px);display:grid;align-items:center;color:#fff;isolation:isolate;overflow:hidden}.hero::before{content:"";position:absolute;inset:0;z-index:-3;background:url("https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg") center/cover;animation:heroBreath 18s ease-in-out infinite alternate}.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,10,9,.92),rgba(7,10,9,.64) 48%,rgba(7,10,9,.22)),linear-gradient(0deg,rgba(7,10,9,.76),rgba(7,10,9,0) 58%)}.hero-glow{position:absolute;width:430px;height:430px;right:7%;top:16%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(246,211,122,.21),transparent 66%);animation:floatGlow 9s ease-in-out infinite}.hero-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:70px 0 110px}.kicker{display:inline-flex;align-items:center;gap:10px;min-height:38px;padding:8px 13px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(255,255,255,.18);font-weight:900;animation:fadeUp .7s ease both}.pulse-dot{width:9px;height:9px;border-radius:50%;background:#5ee592;animation:pulse 1.8s ease-out infinite}h1{max-width:860px;margin-top:24px;color:#f8d676;font-size:clamp(3.2rem,9vw,7.4rem);font-weight:900;text-transform:uppercase;animation:fadeUp .75s .08s ease both}.hero-copy{max-width:720px;margin-top:24px;color:rgba(255,255,255,.9);font-size:clamp(1.05rem,2vw,1.28rem);font-weight:500;animation:fadeUp .75s .16s ease both}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;animation:fadeUp .75s .24s ease both}.action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 18px;border-radius:var(--radius);text-decoration:none;font-weight:900;transition:transform .18s ease,background .18s ease}.action.primary{background:var(--gold-soft);color:#1b1609;box-shadow:0 14px 36px rgba(246,211,122,.25)}.action.secondary{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.18);color:#fff}.action:hover{transform:translateY(-3px)}.hero-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;width:min(960px,100%);margin-top:42px;overflow:hidden;border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);background:rgba(255,255,255,.24);animation:fadeUp .75s .32s ease both}.hero-proof div{padding:16px;background:rgba(255,255,255,.08)}.hero-proof strong{display:block;color:#fff;font-size:1.05rem}.hero-proof span{color:rgba(255,255,255,.76);font-size:.88rem}.scroll-cue{position:absolute;left:50%;bottom:28px;width:28px;height:44px;border:1px solid rgba(255,255,255,.48);border-radius:999px;transform:translateX(-50%)}.scroll-cue::after{content:"";position:absolute;left:50%;top:9px;width:4px;height:8px;border-radius:999px;background:#fff;transform:translateX(-50%);animation:scrollCue 1.6s ease-in-out infinite}
+    .qr-band{position:relative;z-index:2;width:min(1180px,calc(100% - 32px));margin:-54px auto 32px;display:grid;grid-template-columns:1fr 180px;gap:18px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.98);box-shadow:var(--shadow)}.qr-band strong{display:block;font-size:1.25rem}.qr-box{display:grid;place-items:center;min-height:150px;border:1px dashed #cdbfaa;border-radius:var(--radius);background:#fff}.qr-box img{width:132px;height:132px}.qr-note{margin-top:6px;color:var(--muted);font-weight:600}.lang-toggle{display:inline-flex;gap:6px;margin-top:12px}.lang-toggle button{min-height:38px;padding:0 12px;border:1px solid var(--line);background:#fff;font-weight:900}.lang-toggle button.active{background:var(--forest);color:#fff;border-color:var(--forest)}
+    .toolbar{position:sticky;top:0;z-index:9;padding:12px 0;margin-bottom:26px;background:rgba(255,249,238,.98);border-bottom:1px solid rgba(233,222,204,.82)}.toolbar-inner{display:grid;grid-template-columns:1.2fr auto;gap:12px;align-items:center}.search-wrap{display:grid;grid-template-columns:1fr 170px 170px;gap:10px}.chip-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.chip-row::-webkit-scrollbar{display:none}.chip{flex:0 0 auto;min-height:42px;padding:0 14px;border:1px solid var(--line);background:#fff;font-weight:900;white-space:nowrap;transition:transform .18s ease,background .18s ease}.chip:hover{transform:translateY(-1px)}.chip.active{background:var(--forest);color:#fff;border-color:var(--forest)}.order-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line);background:#fff;font-weight:900;white-space:nowrap}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:28px auto 18px}.section-head p:last-child{max-width:540px;color:var(--muted);font-weight:600}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:34px}.card{display:grid;grid-template-rows:214px 1fr;min-height:430px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 10px 30px rgba(21,20,19,.08);animation:cardEnter .58s cubic-bezier(.2,.9,.2,1) both;transition:transform .18s ease,box-shadow .18s ease}.card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(21,20,19,.13)}.image-wrap{position:relative;overflow:hidden;background:#ddd6c8}.image-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}.card:hover img{transform:scale(1.06)}.badge{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:999px;background:rgba(21,20,19,.78);color:#fff;font-size:.75rem;font-weight:900}.card-body{display:grid;gap:12px;padding:16px}.item-top{display:flex;justify-content:space-between;gap:12px}.item-name{font-size:1.14rem;font-weight:900}.price{color:var(--gold);font-weight:900;white-space:nowrap}.desc{color:var(--muted);font-size:.95rem}.rating{display:flex;align-items:center;gap:8px;color:#9a641a;font-weight:900}.meta-row{display:flex;gap:8px;flex-wrap:wrap}.mini{display:inline-flex;align-items:center;min-height:28px;padding:0 8px;border-radius:999px;background:#f5efe4;color:var(--forest);font-size:.78rem;font-weight:900}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}.add-btn{display:inline-flex;align-items:center;justify-content:center;min-width:112px;padding:0 14px;background:var(--ink);color:#fff;font-weight:900}.add-btn:hover{background:var(--forest)}.no-results{grid-column:1/-1;padding:28px;border:1px dashed #d2c3ad;border-radius:var(--radius);background:rgba(255,255,255,.76);color:var(--muted);font-weight:700;text-align:center}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:34px}.panel{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.86);box-shadow:0 10px 28px rgba(21,20,19,.07);padding:18px}.panel h3{margin-bottom:8px}.panel p{color:var(--muted);font-weight:600}.form-grid{display:grid;gap:10px}.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}.status{min-height:28px;color:var(--forest);font-weight:900}.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pill{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;background:#f5efe4;color:var(--forest);font-weight:900;font-size:.84rem}.review-list{display:grid;gap:10px;margin-top:12px}.review{padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.loyalty-card{display:grid;gap:10px}.progress{height:10px;border-radius:999px;background:#eadfcd;overflow:hidden}.progress span{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--gold),var(--mint));transition:width .3s ease}.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dashboard-list{display:grid;gap:10px;max-height:360px;overflow:auto}.dash-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.dash-row small{color:var(--muted);font-weight:700}.toggle{min-height:34px;padding:0 10px;background:#f2ece2;font-weight:900;border-radius:var(--radius);border:1px solid var(--line);transition:background 0.2s;}.toggle.off{background:#f4d7d2;color:#842e20}.toggle:hover{background:#eadfcd}.live-dot{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-weight:900}.live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#48c77b;animation:pulse 1.8s ease-out infinite}
     .cart-toggle{position:fixed;right:20px;bottom:20px;z-index:20;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 18px;background:var(--forest);color:#fff;box-shadow:var(--shadow);font-weight:900}.cart-count{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:var(--gold-soft);color:#1b1609;font-size:.84rem}.scrim{position:fixed;inset:0;z-index:30;background:rgba(10,12,11,.46);opacity:0;pointer-events:none;transition:opacity .22s ease}.scrim.open{opacity:1;pointer-events:auto}.cart{position:fixed;top:0;right:0;z-index:40;display:flex;flex-direction:column;width:min(440px,100%);height:100dvh;padding:18px;background:#fff;box-shadow:-24px 0 60px rgba(21,20,19,.24);transform:translateX(105%);transition:transform .26s ease}.cart.open{transform:translateX(0)}.cart-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}.icon-btn{display:inline-grid;place-items:center;width:44px;padding:0;background:#f3ede3;color:var(--ink);font-weight:900}.cart-items{flex:1;overflow-y:auto;padding:12px 0}.empty-state{display:grid;place-items:center;min-height:230px;color:var(--muted);text-align:center}.empty-state strong{display:block;color:var(--ink);font-size:1.05rem}.cart-line{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-line-title{font-weight:900}.cart-line-price{color:var(--gold);font-weight:900;text-align:right}.qty{display:inline-flex;align-items:center;gap:8px;margin-top:8px}.qty button{display:inline-grid;place-items:center;width:36px;min-height:36px;background:#f3ede3;font-weight:900}.cart-summary{display:grid;gap:12px;padding-top:14px;border-top:1px solid var(--line)}.summary-row{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-weight:800}.summary-row.total{color:var(--ink);font-size:1.22rem;font-weight:900}.checkout-btn,.primary-btn{width:100%;min-height:48px;background:var(--gold);color:#171206;font-weight:900}.secondary-btn{width:100%;min-height:46px;background:var(--forest);color:#fff;font-weight:900}.footer{margin-top:36px;background:#111514;color:#fff}.footer-inner{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:34px 0;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}.footer h2{color:var(--gold-soft);font-size:1.8rem}.footer p,.footer a{color:rgba(255,255,255,.78);text-decoration:none}.footer-list{display:grid;gap:8px;margin-top:10px}.footer-label{margin-bottom:8px;color:var(--gold-soft);font-weight:900}
     @keyframes heroBreath{from{transform:scale(1.02)}to{transform:scale(1.08)}}@keyframes floatGlow{0%,100%{transform:translate3d(0,0,0);opacity:.72}50%{transform:translate3d(-24px,24px,0);opacity:1}}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,229,146,.46)}70%{box-shadow:0 0 0 10px rgba(94,229,146,0)}100%{box-shadow:0 0 0 0 rgba(94,229,146,0)}}@keyframes scrollCue{0%{opacity:0;transform:translate(-50%,0)}35%{opacity:1}100%{opacity:0;transform:translate(-50%,15px)}}@keyframes cardEnter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @media(max-width:980px){.hero-proof,.feature-grid,.dashboard,.footer-inner{grid-template-columns:1fr}.toolbar-inner,.search-wrap,.section-head,.qr-band{grid-template-columns:1fr}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:start}.qr-box{justify-content:start}.hero{min-height:760px}}@media(max-width:640px){.menu-grid{grid-template-columns:1fr}.split{grid-template-columns:1fr}.hero-actions .action{width:100%}.card{grid-template-rows:196px 1fr}.cart-toggle{right:14px;bottom:14px}.hero-proof div{padding:13px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   
     /* Scroll polish */
     .scroll-progress{position:fixed;top:0;left:0;z-index:100;width:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--mint));box-shadow:0 0 18px rgba(189,132,39,.34);transform-origin:left center;transition:width .08s linear}
-    .reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(8px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.2,1),filter .7s ease}.reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
-    .reveal-left{opacity:0;transform:translateX(-26px);filter:blur(8px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.9,.2,1),filter .75s ease}.reveal-right{opacity:0;transform:translateX(26px);filter:blur(8px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.9,.2,1),filter .75s ease}.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0);filter:blur(0)}
+    .reveal{opacity:0;transform:translateY(24px) scale(.985);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.2,1)}.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+    .reveal-left{opacity:0;transform:translateX(-26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.9,.2,1)}.reveal-right{opacity:0;transform:translateX(26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.9,.2,1)}.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
     .card,.panel,.stat,.qr-band{will-change:transform,opacity}.card.visible,.panel.visible{animation:none}.section-head.reveal.visible h2{animation:softShine 1.1s ease both}.chip.active{box-shadow:0 12px 26px rgba(23,62,53,.16)}
     .menu-grid .card:nth-child(2n),.feature-grid .panel:nth-child(2n){transition-delay:.06s}.menu-grid .card:nth-child(3n),.feature-grid .panel:nth-child(3n){transition-delay:.12s}.menu-grid .card:nth-child(4n),.feature-grid .panel:nth-child(4n){transition-delay:.18s}
-    .floating-toast{position:fixed;left:50%;bottom:24px;z-index:120;min-width:min(420px,calc(100% - 32px));padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.94);box-shadow:var(--shadow);transform:translate(-50%,24px);opacity:0;pointer-events:none;backdrop-filter:blur(16px);transition:opacity .24s ease,transform .24s ease}.floating-toast.show{opacity:1;transform:translate(-50%,0)}.floating-toast strong{display:block;color:var(--forest)}.floating-toast span{color:var(--muted);font-weight:700;font-size:.92rem}
+    .floating-toast{position:fixed;left:50%;bottom:24px;z-index:120;min-width:min(420px,calc(100% - 32px));padding:14px 16px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.98);box-shadow:var(--shadow);transform:translate(-50%,24px);opacity:0;pointer-events:none;transition:opacity .24s ease,transform .24s ease}.floating-toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}.floating-toast strong{display:block;color:var(--forest)}.floating-toast span{color:var(--muted);font-weight:700;font-size:.92rem}
     @keyframes softShine{0%{text-shadow:0 0 0 rgba(246,211,122,0)}45%{text-shadow:0 12px 34px rgba(246,211,122,.28)}100%{text-shadow:0 0 0 rgba(246,211,122,0)}}
-    @media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.scroll-progress{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}.scroll-progress{transition:none!important}}
 
-  
     /* Language and motion upgrade */
-    .hero-lang{display:inline-flex;margin-top:18px;padding:5px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);animation:fadeUp .75s .28s ease both}.hero-lang button{min-height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:#fff;font-weight:900}.hero-lang button.active{background:var(--gold-soft);color:#1b1609}.lang-toggle:not(.hero-lang){display:none}.qr-band,.qr-box{display:none!important}
-    .reveal-left{opacity:0;transform:translateX(-34px) scale(.985);filter:blur(8px);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.9,.2,1),filter .78s ease}.reveal-right{opacity:0;transform:translateX(34px) scale(.985);filter:blur(8px);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.9,.2,1),filter .78s ease}.reveal-zoom{opacity:0;transform:scale(.94);filter:blur(9px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.9,.2,1),filter .72s ease}.reveal-left.visible,.reveal-right.visible,.reveal-zoom.visible{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
+    .hero-lang{display:inline-flex;margin-top:18px;padding:5px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.18);animation:fadeUp .75s .28s ease both}.hero-lang button{min-height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:#fff;font-weight:900}.hero-lang button.active{background:var(--gold-soft);color:#1b1609}.lang-toggle:not(.hero-lang){display:none}.qr-band,.qr-box{display:none!important}
+    .reveal-left{opacity:0;transform:translateX(-34px) scale(.985);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.9,.2,1)}.reveal-right{opacity:0;transform:translateX(34px) scale(.985);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.9,.2,1)}.reveal-zoom{opacity:0;transform:scale(.94);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.9,.2,1)}.reveal-left.visible,.reveal-right.visible,.reveal-zoom.visible{opacity:1;transform:translateX(0) scale(1)}
     .menu-grid .card:nth-child(odd){transform-origin:left center}.menu-grid .card:nth-child(even){transform-origin:right center}.feature-grid .panel:nth-child(odd){transform-origin:left center}.feature-grid .panel:nth-child(even){transform-origin:right center}
-    @media(prefers-reduced-motion:reduce){.reveal-left,.reveal-right,.reveal-zoom{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+    @media(prefers-reduced-motion:reduce){.reveal-left,.reveal-right,.reveal-zoom{opacity:1!important;transform:none!important;transition:none!important}}
+
+    /* Micro-interactions & animations */
+    button:active, .action:active, .chip:active, .add-btn:active, .toggle:active {
+      transform: scale(0.95) !important;
+      transition: transform 0.1s ease !important;
+    }
+    @keyframes popCount {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    .cart-count.pop {
+      animation: popCount 0.3s ease-out;
+    }
   </style>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  
   <header class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
@@ -54,59 +71,669 @@
   <nav class="toolbar" aria-label="Menu controls"><div class="toolbar-inner shell"><div class="search-wrap"><input id="search" type="search" placeholder="Search pizza, coffee, juice..." aria-label="Search menu"><select id="sort"><option value="featured">Top Rated</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option></select><select id="priceFilter"><option value="all">All prices</option><option value="under100">Under 100 ETB</option><option value="100to200">100-200 ETB</option><option value="over200">200+ ETB</option></select></div><button class="order-chip" id="openCartTop" type="button"><span id="toolbarTotal">0 ETB</span></button></div></nav>
 
   <main id="menu" class="shell">
-    <section class="section-head"><div><p class="eyebrow" data-i18n="menuEyebrow">Menu browser</p><h2 data-i18n="menuTitle">Search, filter, and order from Baron Hotel.</h2></div><p data-i18n="menuNote">Use category filters for coffee, burgers, meat dishes, soda drinks, juice, and more.</p></section>
+    <section class="section-head reveal"><div><p class="eyebrow" data-i18n="menuEyebrow">Menu browser</p><h2 data-i18n="menuTitle">Search, filter, and order from Baron Hotel.</h2></div><p data-i18n="menuNote">Use category filters for coffee, burgers, meat dishes, soda drinks, juice, and more.</p></section>
     <div class="chip-row" id="categories" role="tablist" aria-label="Menu categories"></div>
-    <section class="menu-grid" id="menuGrid" aria-live="polite"></section>
+    <section class="menu-grid reveal" id="menuGrid" aria-live="polite"></section>
 
-    <section class="section-head"><div><p class="eyebrow">Ordering options</p><h2 data-i18n="serviceTitle">Takeaway, delivery, waiter calls, bills, WiFi, and rewards.</h2></div><p data-i18n="serviceNote">Everything a hotel guest needs is available without leaving the menu page.</p></section>
-    <section class="feature-grid">
+    <section class="section-head reveal"><div><p class="eyebrow">Ordering options</p><h2 data-i18n="serviceTitle">Takeaway, delivery, waiter calls, bills, WiFi, and rewards.</h2></div><p data-i18n="serviceNote">Everything a hotel guest needs is available without leaving the menu page.</p></section>
+    <section class="feature-grid reveal">
       <article class="panel"><h3 data-i18n="orderMode">Takeaway & Delivery</h3><div class="form-grid"><select id="orderMode"><option>Dine-in</option><option>Takeaway</option><option>Delivery</option></select><input id="deliveryAddress" placeholder="Delivery address or room number"><p class="status" id="modeStatus">Dine-in selected.</p></div></article>
       <article class="panel"><h3 data-i18n="waiterTitle">Call a Waiter</h3><div class="form-grid"><input id="tableNumber" placeholder="Table number"><button class="secondary-btn" id="callWaiter" type="button">Call Waiter</button><p class="status" id="waiterStatus"></p></div></article>
       <article class="panel"><h3 data-i18n="billTitle">Request Bill</h3><div class="form-grid"><input id="billTable" placeholder="Table number"><button class="primary-btn" id="requestBill" type="button">Request Bill</button><p class="status" id="billStatus"></p></div></article>
       <article class="panel"><h3>WiFi Password</h3><p id="wifiNetworkLine">Network: <strong>BARON-GUEST</strong></p><div class="split"><input id="wifiPassword" value="Baron@2026" readonly><button class="secondary-btn" id="copyWifi" type="button">Copy</button></div><p class="status" id="wifiStatus"></p></article>
       <article class="panel"><h3 data-i18n="hoursTitle">Location & Opening Hours</h3><p id="locationHoursLine"><strong>Harar Shash</strong><br>Open daily: 7:00 AM - 11:00 PM</p><div class="pill-list"><span class="pill">Phone: 0966746566</span><span class="pill">Telegram: @Tinsaeasfaw</span><span class="pill">Instagram: @tinsea_a</span></div></article>
       <article class="panel loyalty-card"><h3 data-i18n="loyaltyTitle">Loyalty & Rewards</h3><p id="loyaltyText">Add 5 items to unlock a 10% reward.</p><div class="progress"><span id="loyaltyProgress"></span></div><span class="pill" id="rewardBadge">0 / 5 items</span></article>
-    <article class="panel"><h3>Service Questions</h3><p>Send any extra request to the staff service desk.</p><div class="form-grid"><div class="split"><input id="questionTable" placeholder="Table or room number"><select id="questionType"><option value="General question">General question</option><option value="Extra napkins">Extra napkins</option><option value="Water refill">Water refill</option><option value="Clean table">Clean table</option><option value="Food allergy question">Food allergy question</option><option value="Parking help">Parking help</option></select></div><textarea id="serviceQuestion" placeholder="Write your question or request"></textarea><button class="secondary-btn" id="sendQuestion" type="button">Send Service Question</button><p class="status" id="questionStatus"></p></div></article></section>
+      <article class="panel"><h3>Service Questions</h3><p>Send any extra request to the staff service desk.</p><div class="form-grid"><div class="split"><input id="questionTable" placeholder="Table or room number"><select id="questionType"><option value="General question">General question</option><option value="Extra napkins">Extra napkins</option><option value="Water refill">Water refill</option><option value="Clean table">Clean table</option><option value="Food allergy question">Food allergy question</option><option value="Parking help">Parking help</option></select></div><textarea id="serviceQuestion" placeholder="Write your question or request"></textarea><button class="secondary-btn" id="sendQuestion" type="button">Send Service Question</button><p class="status" id="questionStatus"></p></div></article>
+    </section>
 
-    <section class="section-head"><div><p class="eyebrow">Customer reviews</p><h2 data-i18n="reviewsTitle">Reviews and ratings guests can trust.</h2></div><p data-i18n="reviewsNote">Guests can see ratings and leave feedback after ordering.</p></section>
-    <section class="feature-grid"><article class="panel"><h3>Leave a Review</h3><div class="form-grid"><input id="reviewName" placeholder="Your name"><select id="reviewRating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option></select><textarea id="reviewText" placeholder="Write your review"></textarea><button class="primary-btn" id="addReview" type="button">Submit Review</button></div></article><article class="panel" style="grid-column:span 2"><h3>Guest Feedback</h3><div class="review-list" id="reviewList"></div></article></section>
+    <section class="section-head reveal"><div><p class="eyebrow">Customer reviews</p><h2 data-i18n="reviewsTitle">Reviews and ratings guests can trust.</h2></div><p data-i18n="reviewsNote">Guests can see ratings and leave feedback after ordering.</p></section>
+    <section class="feature-grid reveal">
+      <article class="panel"><h3>Leave a Review</h3><div class="form-grid"><input id="reviewName" placeholder="Your name"><select id="reviewRating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option></select><textarea id="reviewText" placeholder="Write your review"></textarea><button class="primary-btn" id="addReview" type="button">Submit Review</button></div></article>
+      <article class="panel" style="grid-column:span 2"><h3>Guest Feedback</h3><div class="review-list" id="reviewList"></div></article>
+    </section>
+
+    <!-- Staff Control Dashboard Section for Real-time Updates & Automation -->
+    <section class="section-head reveal" id="dashboardSection" style="margin-top: 50px; border-top: 1px solid var(--line); padding-top: 30px;">
+      <div>
+        <p class="eyebrow">Hotel Administration</p>
+        <h2>Real-Time Staff Control Panel</h2>
+      </div>
+      <p>Simulate the live hotel service desk. Manage active guest requests and change menu pricing or availability instantly.</p>
+    </section>
+    <section class="dashboard reveal" style="margin-bottom: 50px;">
+      <article class="panel">
+        <h3><span class="live-dot"></span>Live Service Tickets</h3>
+        <p>Guest calls, bill requests, and checkout orders appear here in real-time:</p>
+        <div class="dashboard-list" id="dashboardTickets" style="margin-top: 12px;">
+          <!-- Active orders and requests loaded dynamically -->
+        </div>
+      </article>
+      
+      <article class="panel">
+        <h3>Menu Control & Pricing</h3>
+        <p>Update hotel pricing and toggle items visibility dynamically:</p>
+        <div class="dashboard-list" id="dashboardMenuItems" style="margin-top: 12px;">
+          <!-- Menu items loaded dynamically -->
+        </div>
+      </article>
+    </section>
   </main>
 
-  <button class="cart-toggle" type="button" id="cartToggle" aria-expanded="false" aria-controls="cart">Order <span class="cart-count" id="cartCount">0</span></button><div class="scrim" id="scrim" hidden></div><aside class="cart" id="cart" aria-label="Your order" aria-hidden="true"><div class="cart-header"><div><p class="eyebrow">Contactless ordering</p><h3>Your Order</h3></div><button class="icon-btn" type="button" id="closeCart" aria-label="Close order">X</button></div><div class="cart-items" id="cartItems"></div><div class="cart-summary"><div class="summary-row"><span>Order type</span><span id="cartMode">Dine-in</span></div><div class="summary-row"><span>Items</span><span id="summaryItems">0</span></div><div class="summary-row total"><span>Total</span><span><span id="summaryTotal">0</span> ETB</span></div><button class="checkout-btn" id="sendOrder" type="button">Send Contactless Order</button><p class="status" id="orderStatus"></p></div></aside>
+  <!-- Notification Toast -->
+  <div id="guestToast" class="floating-toast">
+    <strong>Notification</strong>
+    <span>Message description</span>
+  </div>
 
-  <footer class="footer"><div class="footer-inner"><div><h2>BARON HOTEL</h2><p>Luxury taste, fresh food, and contactless service in Harar Shash.</p></div><div><p class="footer-label">Social Media</p><div class="footer-list"><a href="tel:0966746566">0966746566</a><a href="https://t.me/Tinsaeasfaw">@Tinsaeasfaw</a><a href="https://instagram.com/tinsea_a">@tinsea_a</a></div></div><div><p class="footer-label">Opening Hours</p><p>Daily: 7:00 AM - 11:00 PM<br>Location: Harar Shash</p></div></div></footer>
+  <button class="cart-toggle" type="button" id="cartToggle" aria-expanded="false" aria-controls="cart">Order <span class="cart-count" id="cartCount">0</span></button>
+  <div class="scrim" id="scrim" hidden></div>
+  
+  <aside class="cart" id="cart" aria-label="Your order" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">Contactless ordering</p>
+        <h3>Your Order</h3>
+      </div>
+      <button class="icon-btn" type="button" id="closeCart" aria-label="Close order">X</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary">
+      <div class="summary-row"><span>Order type</span><span id="cartMode">Dine-in</span></div>
+      <div class="summary-row"><span>Items</span><span id="summaryItems">0</span></div>
+      <div class="summary-row total"><span>Total</span><span><span id="summaryTotal">0</span> ETB</span></div>
+      <button class="checkout-btn" id="sendOrder" type="button">Send Contactless Order</button>
+      <p class="status" id="orderStatus"></p>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h2>BARON HOTEL</h2>
+        <p>Luxury taste, fresh food, and contactless service in Harar Shash.</p>
+      </div>
+      <div>
+        <p class="footer-label">Social Media</p>
+        <div class="footer-list">
+          <a href="tel:0966746566">0966746566</a>
+          <a href="https://t.me/Tinsaeasfaw">@Tinsaeasfaw</a>
+          <a href="https://instagram.com/tinsea_a">@tinsea_a</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-label">Opening Hours</p>
+        <p>Daily: 7:00 AM - 11:00 PM<br>Location: Harar Shash</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const translations={en:{kicker:"Contactless digital menu, no app download",heroCopy:"Scan, browse, order, call a waiter, request the bill, and enjoy a professional hotel dining experience in English or Amharic.",explore:"Explore Menu",callWaiter:"Call a Waiter",proof1:"Instant access",proof1Text:"QR menu opens in the browser.",proof2:"Smart filters",proof2Text:"Search, category, price, and sorting.",proof3:"Live ordering",proof3Text:"Cart totals update immediately.",proof4:"Guest service",proof4Text:"Waiter, bill, WiFi, delivery, rewards.",qrTitle:"Instant menu access without installing an app.",qrText:"Place this QR on tables, rooms, and reception. Guests scan and order from their own phone.",menuEyebrow:"Menu browser",menuTitle:"Search, filter, and order from Baron Hotel.",menuNote:"Use category filters for coffee, burgers, meat dishes, soda drinks, juice, and more.",serviceTitle:"Takeaway, delivery, waiter calls, bills, WiFi, and rewards.",serviceNote:"Everything a hotel guest needs is available without leaving the menu page.",orderMode:"Takeaway & Delivery",waiterTitle:"Call a Waiter",billTitle:"Request Bill",hoursTitle:"Location & Opening Hours",loyaltyTitle:"Loyalty & Rewards",reviewsTitle:"Reviews and ratings guests can trust.",reviewsNote:"Guests can see ratings and leave feedback after ordering.",dashboardTitle:"Real-time menu updates from one screen.",dashboardNote:"Change prices, availability, or add items and the menu updates immediately in this browser."},am:{kicker:"ያለ አፕ የሚከፈት የQR ዲጂታል ሜኑ",heroCopy:"QR ስካን ያድርጉ፣ ሜኑ ይመልከቱ፣ ትዕዛዝ ይስጡ፣ አስተናጋጅ ይጥሩ፣ ቢል ይጠይቁ፣ በእንግሊዝኛ ወይም በአማርኛ ቀላል የሆቴል አገልግሎት ያግኙ።",explore:"ሜኑ ይመልከቱ",callWaiter:"አስተናጋጅ ጥራ",proof1:"ፈጣን መግቢያ",proof1Text:"QR ሜኑ በብራውዘር ይከፈታል።",proof2:"ብልህ ማጣሪያ",proof2Text:"ፍለጋ፣ ምድብ፣ ዋጋ እና ማደራጀት።",proof3:"ቀጥታ ትዕዛዝ",proof3Text:"የጋሪ ድምር ወዲያውኑ ይቀየራል።",proof4:"የእንግዳ አገልግሎት",proof4Text:"አስተናጋጅ፣ ቢል፣ WiFi፣ ዴሊቨሪ፣ ሽልማት።",qrTitle:"ያለ አፕ ፈጣን የሜኑ መግቢያ።",qrText:"ይህን QR በጠረጴዛ፣ በክፍል እና በመቀበያ ላይ ያስቀምጡ።",menuEyebrow:"የሜኑ መፈለጊያ",menuTitle:"በBaron Hotel ሜኑ ይፈልጉ፣ ያጣሩ፣ ይዘዙ።",menuNote:"ቡና፣ በርገር፣ የስጋ ምግቦች፣ ሶዳ፣ ጁስ እና ሌሎች ምድቦችን ይጠቀሙ።",serviceTitle:"ቴክአዌይ፣ ዴሊቨሪ፣ አስተናጋጅ፣ ቢል፣ WiFi እና ሽልማት።",serviceNote:"እንግዳው የሚፈልገው ሁሉ በአንድ የሜኑ ገጽ ላይ አለ።",orderMode:"ቴክአዌይ እና ዴሊቨሪ",waiterTitle:"አስተናጋጅ ጥራ",billTitle:"ቢል ጠይቅ",hoursTitle:"ቦታ እና የስራ ሰዓት",loyaltyTitle:"ታማኝነት እና ሽልማት",reviewsTitle:"የደንበኞች አስተያየት እና ደረጃ።",reviewsNote:"እንግዶች ደረጃ ማየት እና አስተያየት መጻፍ ይችላሉ።",dashboardTitle:"ቀጥታ የሜኑ ማሻሻያ ከአንድ ገጽ።",dashboardNote:"ዋጋ፣ መገኘት ወይም አዲስ እቃ ሲቀይሩ ሜኑ ወዲያውኑ ይታያል።"}};
+    
     const defaults=[{name:"Pizza",category:"Main",price:280,rating:4.8,available:true,image:"https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg",desc:"Golden crust, melted cheese, and a generous classic topping blend."},{name:"Burger",category:"Burger",price:320,rating:4.9,available:true,image:"https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",desc:"Tender patty, fresh garnish, and rich hotel sauce."},{name:"Shawarma",category:"Meat Dishes",price:260,rating:4.7,available:true,image:"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",desc:"Soft wrap with seasoned slices, crisp vegetables, and sauce."},{name:"Coffee",category:"Coffee",price:80,rating:4.6,available:true,image:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",desc:"Fresh hot coffee for breakfast, meetings, and late evenings."},{name:"Grilled Meat",category:"Meat Dishes",price:420,rating:4.9,available:true,image:"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg",desc:"Satisfying grilled meat plate served hot with a hotel-style finish."},{name:"Soda",category:"Soda Drinks",price:70,rating:4.5,available:true,image:"https://images.pexels.com/photos/2775860/pexels-photo-2775860.jpeg",desc:"Cold sparkling soda served chilled."},{name:"Mango Juice",category:"Juice",price:120,rating:4.8,available:true,image:"https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg",desc:"Bright fruit juice with a smooth mango finish."},{name:"Ice Cream",category:"Desserts",price:120,rating:4.6,available:true,image:"https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg",desc:"Smooth chilled scoops with a clean, refreshing finish."},{name:"Tiramisu",category:"Desserts",price:180,rating:4.8,available:true,image:"https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg",desc:"Layered cream, soft cake, and delicate coffee cocoa finish."},{name:"Mojito",category:"Juice",price:100,rating:4.7,available:true,image:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/15-09-26-RalfR-WLC-0072.jpg/800px-15-09-26-RalfR-WLC-0072.jpg",desc:"Real mojito-style glass with mint, lime, ice, and crisp sparkle."}];
-    let menu=JSON.parse(localStorage.getItem('baronMenu')||'null')||defaults;let reviews=JSON.parse(localStorage.getItem('baronReviews')||'null')||[{name:'Selam',rating:5,text:'Fast service and clean digital menu.'},{name:'Dawit',rating:5,text:'The burger and mojito were excellent.'}];let cart=new Map();let activeCategory='All',lang='en';
+    
+    let menu=JSON.parse(localStorage.getItem('baronMenu')||'null')||defaults;
+    let reviews=JSON.parse(localStorage.getItem('baronReviews')||'null')||[{name:'Selam',rating:5,text:'Fast service and clean digital menu.'},{name:'Dawit',rating:5,text:'The burger and mojito were excellent.'}];
+    let cart=new Map();
+    let activeCategory='All',lang='en';
+    
     const $=id=>document.getElementById(id),grid=$('menuGrid'),cats=$('categories'),search=$('search'),sort=$('sort'),priceFilter=$('priceFilter'),cartPanel=$('cart'),scrim=$('scrim'),cartItems=$('cartItems');
-    const serviceKey='baronServiceRequests';const serviceChannel=('BroadcastChannel' in window)?new BroadcastChannel('baron-service-desk'):null;
-    function money(v){return new Intl.NumberFormat('en-US').format(v)}function saveMenu(){localStorage.setItem('baronMenu',JSON.stringify(menu))}function saveReviews(){localStorage.setItem('baronReviews',JSON.stringify(reviews))}
-    function serviceRequests(){return JSON.parse(localStorage.getItem(serviceKey)||'[]')}function saveServiceRequest(type,details){let req={id:'BRN-'+Date.now().toString(36).toUpperCase(),type,status:'New',time:new Date().toLocaleString(),details};let list=serviceRequests();list.unshift(req);localStorage.setItem(serviceKey,JSON.stringify(list));if(serviceChannel)serviceChannel.postMessage(req);showGuestToast(type, 'Ticket '+req.id+' sent to the staff service desk.');return req}function currentOrderLines(){return Array.from(cart.entries()).map(([name,item])=>name+' x'+item.qty+' = '+money(item.price*item.qty)+' ETB').join('; ')}function showGuestToast(title,msg){let t=$('guestToast');if(!t)return;t.querySelector('strong').textContent=title;t.querySelector('span').textContent=msg;t.classList.add('show');clearTimeout(window.__baronToastTimer);window.__baronToastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
-    const categoryText={en:{All:'All',Main:'Main',Coffee:'Coffee',Burger:'Burger','Meat Dishes':'Meat Dishes','Soda Drinks':'Soda Drinks',Juice:'Juice',Desserts:'Desserts'},am:{All:'ሁሉም',Main:'ዋና ምግብ',Coffee:'ቡና',Burger:'በርገር','Meat Dishes':'የስጋ ምግቦች','Soda Drinks':'ሶዳ መጠጦች',Juice:'ጁስ',Desserts:'ጣፋጭ ምግቦች'}};
-    const itemText={am:{Pizza:{name:'ፒዛ',desc:'ወርቃማ ቅርፊት፣ የቀለጠ ቺዝ እና የሆቴል ቅመም ያለው ምርጥ ፒዛ።'},Burger:{name:'በርገር',desc:'ለስላሳ ስጋ፣ ትኩስ አትክልት እና ልዩ የሆቴል ሶስ ያለው በርገር።'},Shawarma:{name:'ሻዋርማ',desc:'በቅመም የተዘጋጀ ስጋ፣ ትኩስ አትክልት እና ሶስ የተሞላ ለስላሳ ራፕ።'},Coffee:{name:'ቡና',desc:'ለቁርስ፣ ለስብሰባ እና ለምሽት የሚስማማ ትኩስ ቡና።'},'Grilled Meat':{name:'የተጠበሰ ስጋ',desc:'በሙቀት የሚቀርብ የተጠበሰ ስጋ ምግብ።'},Soda:{name:'ሶዳ',desc:'በቀዝቃዛ ሁኔታ የሚቀርብ አረፋማ መጠጥ።'},'Mango Juice':{name:'ማንጎ ጁስ',desc:'ለስላሳ እና ትኩስ የማንጎ ጣዕም ያለው ጁስ።'},'Ice Cream':{name:'አይስ ክሬም',desc:'ቀዝቃዛ፣ ለስላሳ እና ጣፋጭ አይስ ክሬም።'},Tiramisu:{name:'ቲራሚሱ',desc:'ክሬም፣ ለስላሳ ኬክ እና የቡና ኮኮዋ ጣዕም ያለው ጣፋጭ።'},Mojito:{name:'ሞሂቶ',desc:'ሚንት፣ ላይም፣ በረዶ እና አረፋማ ትኩስነት ያለው እውነተኛ የሞሂቶ መጠጥ።'}}};
-    const uiLang={en:{search:'Search pizza, coffee, juice...',topRated:'Top Rated',low:'Price Low to High',high:'Price High to Low',allPrices:'All prices',under100:'Under 100 ETB',p100to200:'100-200 ETB',over200:'200+ ETB',add:'Add to Order',available:'Available now',top:'Top rated',contactless:'Contactless',orderMode:['Dine-in','Takeaway','Delivery'],delivery:'Delivery address or room number',table:'Table number',billTable:'Table number',callWaiterBtn:'Call Waiter',requestBillBtn:'Request Bill',copy:'Copy',questionTable:'Table or room number',question:'Write your question or request',sendQuestion:'Send Service Question',reviewName:'Your name',reviewText:'Write your review',submitReview:'Submit Review',guestFeedback:'Guest Feedback',leaveReview:'Leave a Review',order:'Order',yourOrder:'Your Order',cartEmptyTitle:'Your order is empty',cartEmptyText:'Add items from the digital menu.',orderType:'Order type',items:'Items',total:'Total',sendOrder:'Send Contactless Order',wifiCopied:'WiFi password copied.',wifiLabel:'WiFi Password',network:'Network',location:'Location',hours:'Open daily: 7:00 AM - 11:00 PM',social:'Social Media',hoursLabel:'Opening Hours',networkLabel:'Network',phoneLabel:'Phone',avgRating:'Average rating',stars:'stars',modeSelected:'selected',generalQuestion:'General question',extraNapkins:'Extra napkins',waterRefill:'Water refill',cleanTable:'Clean table',allergyQuestion:'Food allergy question',parkingHelp:'Parking help',footerCopy:'Luxury taste, fresh food, and contactless service in Harar Shash.',noResults:'No menu items match your filters.'},am:{search:'ፒዛ፣ ቡና፣ ጁስ ይፈልጉ...',topRated:'ከፍተኛ ደረጃ',low:'ዋጋ ከዝቅተኛ ወደ ከፍተኛ',high:'ዋጋ ከከፍተኛ ወደ ዝቅተኛ',allPrices:'ሁሉም ዋጋዎች',under100:'ከ100 ETB በታች',p100to200:'100-200 ETB',over200:'200+ ETB',add:'ወደ ትዕዛዝ ጨምር',available:'አሁን ይገኛል',top:'ከፍተኛ ደረጃ',contactless:'ንክኪ የሌለው',orderMode:['በቦታው','ቴክአዌይ','ዴሊቨሪ'],delivery:'የዴሊቨሪ አድራሻ ወይም የክፍል ቁጥር',table:'የጠረጴዛ ቁጥር',billTable:'የጠረጴዛ ቁጥር',callWaiterBtn:'አስተናጋጅ ጥራ',requestBillBtn:'ቢል ጠይቅ',copy:'ቅዳ',questionTable:'የጠረጴዛ ወይም የክፍል ቁጥር',question:'ጥያቄዎን ወይም ጥያቄ አገልግሎት ይጻፉ',sendQuestion:'የአገልግሎት ጥያቄ ላክ',reviewName:'ስምዎ',reviewText:'አስተያየትዎን ይጻፉ',submitReview:'አስተያየት ላክ',guestFeedback:'የእንግዶች አስተያየት',leaveReview:'አስተያየት ይስጡ',order:'ትዕዛዝ',yourOrder:'የእርስዎ ትዕዛዝ',cartEmptyTitle:'ትዕዛዝዎ ባዶ ነው',cartEmptyText:'ከዲጂታል ሜኑ ምግብ ይጨምሩ።',orderType:'የትዕዛዝ አይነት',items:'እቃዎች',total:'ድምር',sendOrder:'ንክኪ የሌለው ትዕዛዝ ላክ',wifiCopied:'የWiFi ፓስዎርድ ተቀድቷል።',wifiLabel:'የWiFi ፓስዎርድ',network:'ኔትዎርክ',location:'ቦታ',hours:'በየቀኑ ክፍት፡ 7:00 AM - 11:00 PM',social:'ማህበራዊ ሚዲያ',hoursLabel:'የስራ ሰዓት',networkLabel:'ኔትዎርክ',phoneLabel:'ስልክ',avgRating:'አማካይ ደረጃ',stars:'ኮከቦች',modeSelected:'ተመርጧል',generalQuestion:'አጠቃላይ ጥያቄ',extraNapkins:'ተጨማሪ ናፕኪን',waterRefill:'ውሃ መሙላት',cleanTable:'ጠረጴዛ ማጽዳት',allergyQuestion:'የአለርጂ ጥያቄ',parkingHelp:'የፓርኪንግ እገዛ',footerCopy:'በHarar Shash የቅንጦት ጣዕም፣ ትኩስ ምግብ እና ንክኪ የሌለው አገልግሎት።',noResults:'ከማጣሪያዎችዎ ጋር የሚመሳሰል ምግብ አልተገኘም።'}};
-    function labelCategory(c){return (categoryText[lang]&&categoryText[lang][c])||c}function itemName(item){return lang==='am'&&itemText.am[item.name]?itemText.am[item.name].name:item.name}function itemDesc(item){return lang==='am'&&itemText.am[item.name]?itemText.am[item.name].desc:item.desc}function ui(key){return (uiLang[lang]&&uiLang[lang][key])||uiLang.en[key]||key}
-    function applyFullLanguage(){search.placeholder=ui('search');sort.options[0].textContent=ui('topRated');sort.options[1].textContent=ui('low');sort.options[2].textContent=ui('high');priceFilter.options[0].textContent=ui('allPrices');priceFilter.options[1].textContent=ui('under100');priceFilter.options[2].textContent=ui('p100to200');priceFilter.options[3].textContent=ui('over200');$('deliveryAddress').placeholder=ui('delivery');$('tableNumber').placeholder=ui('table');$('billTable').placeholder=ui('billTable');$('callWaiter').textContent=ui('callWaiterBtn');$('requestBill').textContent=ui('requestBillBtn');$('copyWifi').textContent=ui('copy');$('questionTable').placeholder=ui('questionTable');$('serviceQuestion').placeholder=ui('question');$('sendQuestion').textContent=ui('sendQuestion');$('reviewName').placeholder=ui('reviewName');$('reviewText').placeholder=ui('reviewText');$('addReview').textContent=ui('submitReview');$('cartToggle').childNodes[0].nodeValue=ui('order')+' ';$('sendOrder').textContent=ui('sendOrder');document.querySelector('.cart-header h3').textContent=ui('yourOrder');document.querySelectorAll('.summary-row span:first-child')[0].textContent=ui('orderType');document.querySelectorAll('.summary-row span:first-child')[1].textContent=ui('items');document.querySelectorAll('.summary-row span:first-child')[2].textContent=ui('total');let mode=$('orderMode');[...mode.options].forEach((o,i)=>o.textContent=ui('orderMode')[i]);document.querySelectorAll('.panel h3').forEach(h=>{if(h.textContent==='WiFi Password'||h.textContent==='የWiFi ፓስዎርድ')h.textContent=ui('wifiLabel');if(h.textContent==='Leave a Review'||h.textContent==='አስተያየት ይስጡ')h.textContent=ui('leaveReview');if(h.textContent==='Guest Feedback'||h.textContent==='የእንግዶች አስተያየት')h.textContent=ui('guestFeedback')});if($('wifiNetworkLine'))$('wifiNetworkLine').innerHTML=ui('networkLabel')+': <strong>BARON-GUEST</strong>';if($('locationHoursLine'))$('locationHoursLine').innerHTML='<strong>Harar Shash</strong><br>'+ui('hours');let q=$('questionType');if(q){q.options[0].textContent=ui('generalQuestion');q.options[1].textContent=ui('extraNapkins');q.options[2].textContent=ui('waterRefill');q.options[3].textContent=ui('cleanTable');q.options[4].textContent=ui('allergyQuestion');q.options[5].textContent=ui('parkingHelp')}let rr=$('reviewRating');if(rr){[...rr.options].forEach(o=>o.textContent=o.value+' '+ui('stars'))}if($('modeStatus'))$('modeStatus').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent+' '+ui('modeSelected')+'.';document.querySelector('.footer p').textContent=ui('footerCopy');document.querySelectorAll('.footer-label')[0].textContent=ui('social');document.querySelectorAll('.footer-label')[1].textContent=ui('hoursLabel')}
-    function setLang(next){lang=next;document.documentElement.lang=next==='am'?'am':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(translations[lang][key])el.textContent=translations[lang][key]});$('langEn').classList.toggle('active',lang==='en');$('langAm').classList.toggle('active',lang==='am');applyFullLanguage();renderCategories();renderMenu();renderCart();renderReviews()}
-    function categories(){return ['All',...Array.from(new Set(menu.map(i=>i.category)))]}function renderCategories(){cats.innerHTML=categories().map(c=>'<button class="chip '+(c===activeCategory?'active':'')+'" type="button" data-cat="'+c+'">'+labelCategory(c)+'</button>').join('')}
-    function filtered(){let q=search.value.trim().toLowerCase();let items=menu.filter(i=>i.available);if(activeCategory!=='All')items=items.filter(i=>i.category===activeCategory);if(q)items=items.filter(i=>(i.name+' '+i.desc+' '+i.category+' '+itemName(i)+' '+itemDesc(i)+' '+labelCategory(i.category)).toLowerCase().includes(q));items=items.filter(i=>priceFilter.value==='all'||(priceFilter.value==='under100'&&i.price<100)||(priceFilter.value==='100to200'&&i.price>=100&&i.price<=200)||(priceFilter.value==='over200'&&i.price>200));if(sort.value==='low')items.sort((a,b)=>a.price-b.price);else if(sort.value==='high')items.sort((a,b)=>b.price-a.price);else items.sort((a,b)=>b.rating-a.rating);return items}
-    function renderMenu(){let items=filtered();grid.innerHTML=items.length?items.map((item,idx)=>'<article class="card reveal-zoom" style="animation-delay:'+(idx*45)+'ms"><div class="image-wrap"><img src="'+item.image+'" alt="'+itemName(item)+'"><span class="badge">'+labelCategory(item.category)+'</span></div><div class="card-body"><div class="item-top"><h3 class="item-name">'+itemName(item)+'</h3><p class="price">'+money(item.price)+' ETB</p></div><p class="desc">'+itemDesc(item)+'</p><div class="rating">★★★★★ <span>'+item.rating.toFixed(1)+'</span></div><div class="meta-row"><span class="mini">'+ui('top')+'</span><span class="mini">'+ui('contactless')+'</span></div><div class="card-bottom"><span class="mini">'+ui('available')+'</span><button class="add-btn" type="button" data-name="'+item.name+'">'+ui('add')+'</button></div></div></article>').join(''):'<div class="no-results">'+ui('noResults')+'</div>';renderDashboard();setTimeout(()=>{document.querySelectorAll('.menu-grid .card:not(.reveal-zoom)').forEach(el=>{el.classList.add('reveal-zoom');if(window.__baronCardObserver)window.__baronCardObserver.observe(el);else el.classList.add('visible')})},0)}
-    function totals(){let items=0,total=0;cart.forEach(i=>{items+=i.qty;total+=i.price*i.qty});return{items,total}}function renderCart(){let t=totals();$('summaryItems').textContent=t.items;$('summaryTotal').textContent=money(t.total);$('toolbarTotal').textContent=money(t.total)+' ETB';$('cartCount').textContent=t.items;$('cartMode').textContent=$('orderMode').value;$('loyaltyProgress').style.width=Math.min(100,t.items/5*100)+'%';$('rewardBadge').textContent=t.items+' / 5 items';$('loyaltyText').textContent=t.items>=5?'Reward unlocked: 10% discount ready.':'Add '+Math.max(0,5-t.items)+' more item(s) to unlock a 10% reward.';if(!t.items){cartItems.innerHTML='<div class="empty-state"><p><strong>'+ui('cartEmptyTitle')+'</strong>'+ui('cartEmptyText')+'</p></div>';return}cartItems.innerHTML=Array.from(cart.entries()).map(([name,item])=>'<div class="cart-line"><div><p class="cart-line-title">'+(lang==='am'&&itemText.am[name]?itemText.am[name].name:name)+'</p><div class="qty"><button type="button" data-action="dec" data-name="'+name+'">-</button><span>'+item.qty+'</span><button type="button" data-action="inc" data-name="'+name+'">+</button></div></div><p class="cart-line-price">'+money(item.price*item.qty)+' ETB</p></div>').join('')}
-    function addToCart(name){let item=menu.find(i=>i.name===name);if(!item)return;let old=cart.get(name);cart.set(name,{price:item.price,qty:old?old.qty+1:1});renderCart();openCart()}function updateQty(name,d){let item=cart.get(name);if(!item)return;let q=item.qty+d;if(q<=0)cart.delete(name);else cart.set(name,{...item,qty:q});renderCart()}function openCart(){cartPanel.classList.add('open');scrim.classList.add('open');scrim.hidden=false;cartPanel.setAttribute('aria-hidden','false');$('cartToggle').setAttribute('aria-expanded','true')}function closeCart(){cartPanel.classList.remove('open');scrim.classList.remove('open');cartPanel.setAttribute('aria-hidden','true');$('cartToggle').setAttribute('aria-expanded','false');setTimeout(()=>{if(!scrim.classList.contains('open'))scrim.hidden=true},220)}
-    function renderReviews(){let avg=reviews.reduce((a,r)=>a+r.rating,0)/reviews.length;$('reviewList').innerHTML='<p class="pill">'+ui('avgRating')+': '+avg.toFixed(1)+' / 5</p>'+reviews.map(r=>'<div class="review"><strong>'+r.name+' · '+r.rating+' '+ui('stars')+'</strong><p>'+r.text+'</p></div>').join('')}function renderDashboard(){}
-    cats.addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(!b)return;activeCategory=b.dataset.cat;renderCategories();renderMenu()});[search,sort,priceFilter].forEach(el=>el.addEventListener('input',renderMenu));grid.addEventListener('click',e=>{let b=e.target.closest('.add-btn');if(b)addToCart(b.dataset.name)});$('cartToggle').addEventListener('click',openCart);$('openCartTop').addEventListener('click',openCart);$('closeCart').addEventListener('click',closeCart);scrim.addEventListener('click',closeCart);cartItems.addEventListener('click',e=>{let b=e.target.closest('[data-action]');if(b)updateQty(b.dataset.name,b.dataset.action==='inc'?1:-1)});$('orderMode').addEventListener('change',()=>{$('modeStatus').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent+' '+ui('modeSelected')+'.';renderCart()});$('callWaiter').addEventListener('click',()=>{let table=$('tableNumber').value||'not specified';let req=saveServiceRequest('Call Waiter',{table, message:'Guest requested a waiter.'});$('waiterStatus').textContent='Waiter request sent for table '+table+'. Ticket '+req.id+'.'});$('openWaiterHero').addEventListener('click',()=>{location.hash='menu';$('tableNumber').focus()});$('requestBill').addEventListener('click',()=>{let table=$('billTable').value||'not specified';let req=saveServiceRequest('Request Bill',{table, total:money(totals().total)+' ETB', message:'Guest requested the bill.'});$('billStatus').textContent='Bill requested for table '+table+'. Ticket '+req.id+'.'});$('copyWifi').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('wifiPassword').value);$('wifiStatus').textContent='WiFi password copied.'}catch{$('wifiStatus').textContent='WiFi password: '+$('wifiPassword').value}});$('sendQuestion').addEventListener('click',()=>{let table=$('questionTable').value||'not specified';let message=$('serviceQuestion').value||'Guest sent a service question.';let req=saveServiceRequest('Service Question',{table,category:$('questionType').value,message});$('questionStatus').textContent='Question sent to service desk. Ticket '+req.id+'.';$('serviceQuestion').value=''});$('sendOrder').addEventListener('click',()=>{let t=totals();if(!t.items){$('orderStatus').textContent='Add items before sending order.';return}let req=saveServiceRequest('Contactless Order',{mode:$('orderMode').value,address:$('deliveryAddress').value||'not provided',items:currentOrderLines(),total:money(t.total)+' ETB'});$('orderStatus').textContent='Order sent to service desk. Ticket '+req.id+'.'});$('addReview').addEventListener('click',()=>{reviews.unshift({name:$('reviewName').value||'Guest',rating:Number($('reviewRating').value),text:$('reviewText').value||'Great service.'});saveReviews();renderReviews();$('reviewText').value=''});$('langEn').addEventListener('click',()=>setLang('en'));$('langAm').addEventListener('click',()=>setLang('am'));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});function initScrollPolish(){
-      document.querySelectorAll('.section-head').forEach((el,i)=>el.classList.add(i%2?'reveal-right':'reveal-left'));document.querySelectorAll('.panel').forEach((el,i)=>el.classList.add(i%2?'reveal-right':'reveal-left'));document.querySelectorAll('.card').forEach(el=>el.classList.add('reveal-zoom'));document.querySelectorAll('.hero-proof,.feature-grid,.review-list').forEach(el=>el.classList.add('reveal-zoom'));
-      const progress=$('scrollProgress');
-      const updateProgress=()=>{let max=document.documentElement.scrollHeight-window.innerHeight;let pct=max>0?(window.scrollY/max)*100:0;if(progress)progress.style.width=pct+'%'};
-      window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
-      if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom').forEach(el=>el.classList.add('visible'));return}
-      const io=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}})},{threshold:.14,rootMargin:'0px 0px -7% 0px'});window.__baronCardObserver=io;
-      document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
+    const serviceKey='baronServiceRequests';
+    const serviceChannel=('BroadcastChannel' in window)?new BroadcastChannel('baron-service-desk'):null;
+    
+    function money(v){return new Intl.NumberFormat('en-US').format(v)}
+    function saveMenu(){localStorage.setItem('baronMenu',JSON.stringify(menu))}
+    function saveReviews(){localStorage.setItem('baronReviews',JSON.stringify(reviews))}
+    function serviceRequests(){return JSON.parse(localStorage.getItem(serviceKey)||'[]')}
+    
+    function saveServiceRequest(type,details){
+      let req={id:'BRN-'+Date.now().toString(36).toUpperCase(),type,status:'New',time:new Date().toLocaleString(),details};
+      let list=serviceRequests();
+      list.unshift(req);
+      localStorage.setItem(serviceKey,JSON.stringify(list));
+      if(serviceChannel)serviceChannel.postMessage(req);
+      showGuestToast(type, 'Ticket '+req.id+' sent to the staff service desk.');
+      renderDashboard();
+      
+      // Auto status simulator automation
+      startTicketSimulation(req.id);
+      
+      return req;
     }
-    renderCategories();renderMenu();renderCart();renderReviews();setLang('en');initScrollPolish();
+    
+    function currentOrderLines(){return Array.from(cart.entries()).map(([name,item])=>name+' x'+item.qty+' = '+money(item.price*item.qty)+' ETB').join('; ')}
+    
+    function showGuestToast(title,msg){
+      let t=$('guestToast');
+      if(!t)return;
+      t.querySelector('strong').textContent=title;
+      t.querySelector('span').textContent=msg;
+      t.classList.add('show');
+      clearTimeout(window.__baronToastTimer);
+      window.__baronToastTimer=setTimeout(()=>t.classList.remove('show'),3200);
+    }
+    
+    const categoryText={en:{All:'All',Main:'Main',Coffee:'Coffee',Burger:'Burger','Meat Dishes':'Meat Dishes','Soda Drinks':'Soda Drinks',Juice:'Juice',Desserts:'Desserts'},am:{All:'ሁሉም',Main:'ዋና ምግብ',Coffee:'ቡና',Burger:'በርገር','Meat Dishes':'የስጋ ምግቦች','Soda Drinks':'ሶዳ መጠጦች',Juice:'ጁስ',Desserts:'ጣፋጭ ምግቦች'}};
+    
+    const itemText={am:{Pizza:{name:'ፒዛ',desc:'ወርቃማ ቅርፊት፣ የቀለጠ ቺዝ እና የሆቴል ቅመም ያለው ምርጥ ፒዛ።'},Burger:{name:'በርገር',desc:'ለስላሳ ስጋ፣ ትኩስ አትክልት እና ልዩ የሆቴል ሶስ ያለው በርገር።'},Shawarma:{name:'ሻዋርማ',desc:'በቅመም የተዘጋጀ ስጋ፣ ትኩስ አትክልት እና ሶስ የተሞላ ለስላሳ ራፕ።'},Coffee:{name:'ቡና',desc:'ለቁርስ፣ ለስብሰባ እና ለምሽት የሚስማማ ትኩስ ቡና።'},'Grilled Meat':{name:'የተጠበሰ ስጋ',desc:'በሙቀት የሚቀርብ የተጠበሰ ስጋ ምግብ።'},Soda:{name:'ሶዳ',desc:'በቀዝቃዛ ሁኔታ የሚቀርብ አረፋማ መጠጥ።'},'Mango Juice':{name:'ማንጎ ጁስ',desc:'ለስላሳ እና ትኩስ የማንጎ ጣዕም ያለው ጁስ።'},'Ice Cream':{name:'አይስ ክሬም',desc:'ቀዝቃዛ፣ ለስላሳ እና ጣፋጭ አይስ ክሬም።'},Tiramisu:{name:'ቲራሚሱ',desc:'ክሬም፣ ለስላሳ ኬክ እና የቡና ኮኮዋ ጣዕም ያለው ጣፋጭ።'},Mojito:{name:'ሞሂቶ',desc:'ሚንት፣ ላይም፣ በረዶ እና አረፋማ ትኩስነት ያለው እውነተኛ የሞሂቶ መጠጥ።'}}};
+    
+    const uiLang={en:{search:'Search pizza, coffee, juice...',topRated:'Top Rated',low:'Price Low to High',high:'Price High to Low',allPrices:'All prices',under100:'Under 100 ETB',p100to200:'100-200 ETB',over200:'200+ ETB',add:'Add to Order',available:'Available now',top:'Top rated',contactless:'Contactless',orderMode:['Dine-in','Takeaway','Delivery'],delivery:'Delivery address or room number',table:'Table number',billTable:'Table number',callWaiterBtn:'Call Waiter',requestBillBtn:'Request Bill',copy:'Copy',questionTable:'Table or room number',question:'Write your question or request',sendQuestion:'Send Service Question',reviewName:'Your name',reviewText:'Write your review',submitReview:'Submit Review',guestFeedback:'Guest Feedback',leaveReview:'Leave a Review',order:'Order',yourOrder:'Your Order',cartEmptyTitle:'Your order is empty',cartEmptyText:'Add items from the digital menu.',orderType:'Order type',items:'Items',total:'Total',sendOrder:'Send Contactless Order',wifiCopied:'WiFi password copied.',wifiLabel:'WiFi Password',network:'Network',location:'Location',hours:'Open daily: 7:00 AM - 11:00 PM',social:'Social Media',hoursLabel:'Opening Hours',networkLabel:'Network',phoneLabel:'Phone',avgRating:'Average rating',stars:'stars',modeSelected:'selected',generalQuestion:'General question',extraNapkins:'Extra napkins',waterRefill:'Water refill',cleanTable:'Clean table',allergyQuestion:'Food allergy question',parkingHelp:'Parking help',footerCopy:'Luxury taste, fresh food, and contactless service in Harar Shash.',noResults:'No menu items match your filters.'},am:{search:'ፒዛ፣ ቡና፣ ጁስ ይፈልጉ...',topRated:'ከፍተኛ ደረጃ',low:'ዋጋ ከዝቅተኛ ወደ ከፍተኛ',high:'ዋጋ ከከፍተኛ ወደ ዝቅተኛ',allPrices:'ሁሉም ዋጋዎች',under100:'ከ100 ETB በታች',p100to200:'100-200 ETB',over200:'200+ ETB',add:'ወደ ትዕዛዝ ጨምር',available:'አሁን ይገኛል',top:'ከፍተኛ ደረጃ',contactless:'ንክኪ የሌለው',orderMode:['በቦታው','ቴክአዌይ','ዴሊቨሪ'],delivery:'የዴሊቨሪ አድራሻ ወይም የክፍል ቁጥር',table:'የጠረጴዛ ቁጥር',billTable:'የጠረጴዛ ቁጥር',callWaiterBtn:'አስተናጋጅ ጥራ',requestBillBtn:'ቢል ጠይቅ',copy:'ቅዳ',questionTable:'የጠረጴዛ ወይም የክፍል ቁጥር',question:'ጥያቄዎን ወይም ጥያቄ አገልግሎት ይጻፉ',sendQuestion:'የአገልግሎት ጥያቄ ላክ',reviewName:'ስምዎ',reviewText:'አስተያየትዎን ይጻፉ',submitReview:'አስተያየት ላክ',guestFeedback:'የእንግዶች አስተያየት',leaveReview:'አስተያየት ይስጡ',order:'ትዕዛዝ',yourOrder:'የእርስዎ ትዕዛዝ',cartEmptyTitle:'ትዕዛዝዎ ባዶ ነው',cartEmptyText:'ከዲጂታል ሜኑ ምግብ ይጨምሩ።',orderType:'የትዕዛዝ አይነት',items:'እቃዎች',total:'ድምር',sendOrder:'ንክኪ የሌለው ትዕዛዝ ላክ',wifiCopied:'የWiFi ፓስዎርድ ተቀድቷል።',wifiLabel:'የWiFi ፓስዎርድ',network:'ኔትዎርክ',location:'ቦታ',hours:'በየቀኑ ክፍት፡ 7:00 AM - 11:00 PM',social:'ማህበራዊ ሚዲያ',hoursLabel:'የስራ ሰዓት',networkLabel:'ኔትዎርክ',phoneLabel:'ስልክ',avgRating:'አማካይ ደረጃ',stars:'ኮከቦች',modeSelected:'ተመርጧል',generalQuestion:'አጠቃላይ ጥያቄ',extraNapkins:'ተጨማሪ ናፕኪን',waterRefill:'ውሃ መሙላት',cleanTable:'ጠረጴዛ ማጽዳት',allergyQuestion:'የአለርጂ ጥያቄ',parkingHelp:'የፓርኪንግ እገዛ',footerCopy:'በHarar Shash የቅንጦት ጣዕም፣ ትኩስ ምግብ እና ንክኪ የሌለው አገልግሎት።',noResults:'ከማጣሪያዎችዎ ጋር የሚመሳሰል ምግብ አልተገኘም።'}};
+    
+    function labelCategory(c){return (categoryText[lang]&&categoryText[lang][c])||c}
+    function itemName(item){return lang==='am'&&itemText.am[item.name]?itemText.am[item.name].name:item.name}
+    function itemDesc(item){return lang==='am'&&itemText.am[item.name]?itemText.am[item.name].desc:item.desc}
+    function ui(key){return (uiLang[lang]&&uiLang[lang][key])||uiLang.en[key]||key}
+    
+    function applyFullLanguage(){
+      search.placeholder=ui('search');
+      sort.options[0].textContent=ui('topRated');
+      sort.options[1].textContent=ui('low');
+      sort.options[2].textContent=ui('high');
+      priceFilter.options[0].textContent=ui('allPrices');
+      priceFilter.options[1].textContent=ui('under100');
+      priceFilter.options[2].textContent=ui('p100to200');
+      priceFilter.options[3].textContent=ui('over200');
+      $('deliveryAddress').placeholder=ui('delivery');
+      $('tableNumber').placeholder=ui('table');
+      $('billTable').placeholder=ui('billTable');
+      $('callWaiter').textContent=ui('callWaiterBtn');
+      $('requestBill').textContent=ui('requestBillBtn');
+      $('copyWifi').textContent=ui('copy');
+      $('questionTable').placeholder=ui('questionTable');
+      $('serviceQuestion').placeholder=ui('question');
+      $('sendQuestion').textContent=ui('sendQuestion');
+      $('reviewName').placeholder=ui('reviewName');
+      $('reviewText').placeholder=ui('reviewText');
+      $('addReview').textContent=ui('submitReview');
+      $('cartToggle').childNodes[0].nodeValue=ui('order')+' ';
+      $('sendOrder').textContent=ui('sendOrder');
+      document.querySelector('.cart-header h3').textContent=ui('yourOrder');
+      document.querySelectorAll('.summary-row span:first-child')[0].textContent=ui('orderType');
+      document.querySelectorAll('.summary-row span:first-child')[1].textContent=ui('items');
+      document.querySelectorAll('.summary-row span:first-child')[2].textContent=ui('total');
+      let mode=$('orderMode');
+      [...mode.options].forEach((o,i)=>o.textContent=ui('orderMode')[i]);
+      document.querySelectorAll('.panel h3').forEach(h=>{
+        if(h.textContent==='WiFi Password'||h.textContent==='የWiFi ፓስዎርድ')h.textContent=ui('wifiLabel');
+        if(h.textContent==='Leave a Review'||h.textContent==='አስተያየት ይስጡ')h.textContent=ui('leaveReview');
+        if(h.textContent==='Guest Feedback'||h.textContent==='የእንግዶች አስተያየት')h.textContent=ui('guestFeedback');
+      });
+      if($('wifiNetworkLine'))$('wifiNetworkLine').innerHTML=ui('networkLabel')+': <strong>BARON-GUEST</strong>';
+      if($('locationHoursLine'))$('locationHoursLine').innerHTML='<strong>Harar Shash</strong><br>'+ui('hours');
+      let q=$('questionType');
+      if(q){
+        q.options[0].textContent=ui('generalQuestion');
+        q.options[1].textContent=ui('extraNapkins');
+        q.options[2].textContent=ui('waterRefill');
+        q.options[3].textContent=ui('cleanTable');
+        q.options[4].textContent=ui('allergyQuestion');
+        q.options[5].textContent=ui('parkingHelp');
+      }
+      let rr=$('reviewRating');
+      if(rr){
+        [...rr.options].forEach(o=>o.textContent=o.value+' '+ui('stars'));
+      }
+      if($('modeStatus'))$('modeStatus').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent+' '+ui('modeSelected')+'.';
+      document.querySelector('.footer p').textContent=ui('footerCopy');
+      document.querySelectorAll('.footer-label')[0].textContent=ui('social');
+      document.querySelectorAll('.footer-label')[1].textContent=ui('hoursLabel');
+    }
+    
+    function setLang(next){
+      lang=next;
+      document.documentElement.lang=next==='am'?'am':'en';
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key=el.dataset.i18n;
+        if(translations[lang][key])el.textContent=translations[lang][key];
+      });
+      $('langEn').classList.toggle('active',lang==='en');
+      $('langAm').classList.toggle('active',lang==='am');
+      applyFullLanguage();
+      renderCategories();
+      renderMenu();
+      renderCart();
+      renderReviews();
+    }
+    
+    function categories(){return ['All',...Array.from(new Set(menu.map(i=>i.category)))]}
+    
+    function renderCategories(){
+      cats.innerHTML=categories().map(c=>'<button class="chip '+(c===activeCategory?'active':'')+'" type="button" data-cat="'+c+'">'+labelCategory(c)+'</button>').join('');
+    }
+    
+    function filtered(){
+      let q=search.value.trim().toLowerCase();
+      let items=menu.filter(i=>i.available || activeCategory==='All'); 
+      
+      items = items.filter(i => i.available);
+      
+      if(activeCategory!=='All') items=items.filter(i=>i.category===activeCategory);
+      
+      if(q) {
+        items=items.filter(i=>(i.name+' '+i.desc+' '+i.category+' '+itemName(i)+' '+itemDesc(i)+' '+labelCategory(i.category)).toLowerCase().includes(q));
+      }
+      
+      items=items.filter(i=>priceFilter.value==='all'||(priceFilter.value==='under100'&&i.price<100)||(priceFilter.value==='100to200'&&i.price>=100&&i.price<=200)||(priceFilter.value==='over200'&&i.price>200));
+      
+      if(sort.value==='low') items.sort((a,b)=>a.price-b.price);
+      else if(sort.value==='high') items.sort((a,b)=>b.price-a.price);
+      else items.sort((a,b)=>b.rating-a.rating);
+      
+      return items;
+    }
+    
+    function renderMenu(){
+      let items=filtered();
+      grid.innerHTML=items.length?items.map((item,idx)=>`
+        <article class="card reveal-zoom" style="animation-delay:${idx*45}ms">
+          <div class="image-wrap">
+            <img src="${item.image}" alt="${itemName(item)}">
+            <span class="badge">${labelCategory(item.category)}</span>
+          </div>
+          <div class="card-body">
+            <div class="item-top">
+              <h3 class="item-name">${itemName(item)}</h3>
+              <p class="price">${money(item.price)} ETB</p>
+            </div>
+            <p class="desc">${itemDesc(item)}</p>
+            <div class="rating">★★★★★ <span>${item.rating.toFixed(1)}</span></div>
+            <div class="meta-row">
+              <span class="mini">${ui('top')}</span>
+              <span class="mini">${ui('contactless')}</span>
+            </div>
+            <div class="card-bottom">
+              <span class="mini">${ui('available')}</span>
+              <button class="add-btn" type="button" data-name="${item.name}">${ui('add')}</button>
+            </div>
+          </div>
+        </article>
+      `).join(''):`<div class="no-results">${ui('noResults')}</div>`;
+      
+      renderDashboard();
+      
+      setTimeout(()=>{
+        document.querySelectorAll('.menu-grid .card:not(.reveal-zoom)').forEach(el=>{
+          el.classList.add('reveal-zoom');
+          if(window.__baronCardObserver) window.__baronCardObserver.observe(el);
+          else el.classList.add('visible');
+        });
+      },0);
+    }
+    
+    function totals(){
+      let items=0,total=0;
+      cart.forEach(i=>{
+        items+=i.qty;
+        total+=i.price*i.qty;
+      });
+      return{items,total};
+    }
+    
+    function renderCart(){
+      let t=totals();
+      $('summaryItems').textContent=t.items;
+      $('summaryTotal').textContent=money(t.total);
+      $('toolbarTotal').textContent=money(t.total)+' ETB';
+      $('cartCount').textContent=t.items;
+      $('cartMode').textContent=$('orderMode').value;
+      $('loyaltyProgress').style.width=Math.min(100,t.items/5*100)+'%';
+      $('rewardBadge').textContent=t.items+' / 5 items';
+      $('loyaltyText').textContent=t.items>=5?'Reward unlocked: 10% discount ready.':'Add '+Math.max(0,5-t.items)+' more item(s) to unlock a 10% reward.';
+      if(!t.items){
+        cartItems.innerHTML='<div class="empty-state"><p><strong>'+ui('cartEmptyTitle')+'</strong><br>'+ui('cartEmptyText')+'</p></div>';
+        return;
+      }
+      cartItems.innerHTML=Array.from(cart.entries()).map(([name,item])=>`
+        <div class="cart-line">
+          <div>
+            <p class="cart-line-title">${lang==='am'&&itemText.am[name]?itemText.am[name].name:name}</p>
+            <div class="qty">
+              <button type="button" data-action="dec" data-name="${name}">-</button>
+              <span>${item.qty}</span>
+              <button type="button" data-action="inc" data-name="${name}">+</button>
+            </div>
+          </div>
+          <p class="cart-line-price">${money(item.price*item.qty)} ETB</p>
+        </div>
+      `).join('');
+    }
+    
+    function addToCart(name){
+      let item=menu.find(i=>i.name===name);
+      if(!item)return;
+      let old=cart.get(name);
+      cart.set(name,{price:item.price,qty:old?old.qty+1:1});
+      renderCart();
+      
+      let badge = $('cartCount');
+      if (badge) {
+        badge.classList.add('pop');
+        setTimeout(() => badge.classList.remove('pop'), 300);
+      }
+      
+      openCart();
+    }
+    
+    function updateQty(name,d){
+      let item=cart.get(name);
+      if(!item)return;
+      let q=item.qty+d;
+      if(q<=0)cart.delete(name);
+      else cart.set(name,{...item,qty:q});
+      renderCart();
+    }
+    
+    function openCart(){
+      cartPanel.classList.add('open');
+      scrim.classList.add('open');
+      scrim.hidden=false;
+      cartPanel.setAttribute('aria-hidden','false');
+      $('cartToggle').setAttribute('aria-expanded','true');
+    }
+    
+    function closeCart(){
+      cartPanel.classList.remove('open');
+      scrim.classList.remove('open');
+      cartPanel.setAttribute('aria-hidden','true');
+      $('cartToggle').setAttribute('aria-expanded','false');
+      setTimeout(()=>{
+        if(!scrim.classList.contains('open'))scrim.hidden=true;
+      },220);
+    }
+    
+    function renderReviews(){
+      let avg=reviews.reduce((a,r)=>a+r.rating,0)/reviews.length;
+      $('reviewList').innerHTML='<p class="pill">'+ui('avgRating')+': '+avg.toFixed(1)+' / 5</p>'+reviews.map(r=>`<div class="review"><strong>${r.name} · ${r.rating} ${ui('stars')}</strong><p>${r.text}</p></div>`).join('');
+    }
+    
+    function renderDashboard(){
+      let list = serviceRequests();
+      let ticketsDiv = $('dashboardTickets');
+      if (!ticketsDiv) return;
+      
+      if (list.length === 0) {
+        ticketsDiv.innerHTML = `
+          <div class="empty-state" style="min-height: 100px;">
+            <strong>No active tickets</strong>
+            <span>Active requests will appear here.</span>
+          </div>
+        `;
+      } else {
+        ticketsDiv.innerHTML = list.map(t => {
+          let statusColor = 'var(--muted)';
+          if (t.status === 'In Progress') statusColor = 'var(--blue)';
+          if (t.status === 'Completed') statusColor = 'var(--mint)';
+          return `
+            <div class="dash-row" style="margin-bottom: 8px;">
+              <div>
+                <strong>${t.type} <small style="color: var(--gold); font-size: 0.72rem;">#${t.id}</small></strong>
+                <p style="font-size: 0.86rem; margin: 4px 0; color: var(--ink); white-space: pre-line;">${t.details}</p>
+                <small>${t.time} · Status: <strong style="color: ${statusColor};">${t.status}</strong></small>
+              </div>
+              <div style="display: flex; gap: 6px; align-items: center; justify-content: flex-end; margin-top: 8px;">
+                ${t.status === 'New' ? `<button class="toggle" onclick="changeTicketStatus('${t.id}', 'In Progress')">Accept</button>` : ''}
+                ${t.status === 'In Progress' ? `<button class="toggle" onclick="changeTicketStatus('${t.id}', 'Completed')">Complete</button>` : ''}
+                <button class="toggle off" onclick="dismissTicket('${t.id}')">Dismiss</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+      
+      let menuDiv = $('dashboardMenuItems');
+      if (menuDiv) {
+        menuDiv.innerHTML = menu.map(item => `
+          <div class="dash-row" style="margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <div>
+                <strong>${itemName(item)}</strong>
+                <small style="display: block; color: var(--muted);">${labelCategory(item.category)}</small>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 2px;">
+                  <input type="number" value="${item.price}" onchange="changeItemPrice('${item.name}', this.value)" style="width: 76px; min-height: 34px; padding: 0 4px; border: 1px solid var(--line); border-radius: 4px; text-align: center;">
+                  <span style="font-size: 0.75rem; font-weight: 800; color: var(--muted);">ETB</span>
+                </div>
+                <button class="toggle ${item.available ? '' : 'off'}" onclick="toggleItemAvailable('${item.name}')" style="min-height: 34px; font-size: 0.8rem;">
+                  ${item.available ? 'Live' : 'Hidden'}
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+    
+    function updateTicketStatus(ticketId, newStatus) {
+      let list = serviceRequests();
+      let ticket = list.find(t => t.id === ticketId);
+      if (ticket) {
+        ticket.status = newStatus;
+        localStorage.setItem(serviceKey, JSON.stringify(list));
+        if (serviceChannel) serviceChannel.postMessage(ticket);
+        showGuestToast(`${ticket.type} Update`, `Ticket #${ticket.id} marked as ${newStatus}.`);
+        renderDashboard();
+      }
+    }
+    
+    window.changeTicketStatus = function(ticketId, newStatus) {
+      updateTicketStatus(ticketId, newStatus);
+    };
+    
+    window.dismissTicket = function(ticketId) {
+      let list = serviceRequests();
+      let index = list.findIndex(t => t.id === ticketId);
+      if (index !== -1) {
+        list.splice(index, 1);
+        localStorage.setItem(serviceKey, JSON.stringify(list));
+        renderDashboard();
+      }
+    };
+    
+    window.changeItemPrice = function(name, val) {
+      let price = parseFloat(val);
+      if (isNaN(price) || price < 0) return;
+      let item = menu.find(i => i.name === name);
+      if (item) {
+        item.price = price;
+        saveMenu();
+        renderMenu();
+        renderCart();
+        renderDashboard();
+        showGuestToast('Price Changed', `${name} price set to ${price} ETB.`);
+      }
+    };
+    
+    window.toggleItemAvailable = function(name) {
+      let item = menu.find(i => i.name === name);
+      if (item) {
+        item.available = !item.available;
+        saveMenu();
+        renderCategories();
+        renderMenu();
+        renderCart();
+        renderDashboard();
+        showGuestToast('Visibility Updated', `${name} is now ${item.available ? 'Live' : 'Hidden'}.`);
+      }
+    };
+    
+    function startTicketSimulation(ticketId) {
+      setTimeout(() => {
+        updateTicketStatus(ticketId, 'In Progress');
+      }, 5000);
+      setTimeout(() => {
+        updateTicketStatus(ticketId, 'Completed');
+      }, 10000);
+    }
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    
+    window.__baronCardObserver = revealObserver;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      cats.addEventListener('click', e => {
+        let b = e.target.closest('[data-cat]');
+        if (!b) return;
+        activeCategory = b.dataset.cat;
+        renderCategories();
+        renderMenu();
+        $('menuGrid').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+      
+      [search, sort, priceFilter].forEach(el => el.addEventListener('input', renderMenu));
+      
+      grid.addEventListener('click', e => {
+        let b = e.target.closest('.add-btn');
+        if (b) addToCart(b.dataset.name);
+      });
+      
+      $('cartToggle').addEventListener('click', openCart);
+      $('openCartTop').addEventListener('click', openCart);
+      $('closeCart').addEventListener('click', closeCart);
+      scrim.addEventListener('click', closeCart);
+      
+      cartItems.addEventListener('click', e => {
+        let b = e.target.closest('[data-action]');
+        if (b) updateQty(b.dataset.name, b.dataset.action === 'inc' ? 1 : -1);
+      });
+      
+      $('orderMode').addEventListener('change', () => {
+        $('modeStatus').textContent = $('orderMode').options[$('orderMode').selectedIndex].textContent + ' ' + ui('modeSelected') + '.';
+        renderCart();
+      });
+      
+      $('langEn').addEventListener('click', () => setLang('en'));
+      $('langAm').addEventListener('click', () => setLang('am'));
+      
+      $('openWaiterHero').addEventListener('click', () => {
+        $('tableNumber').scrollIntoView({ behavior: 'smooth' });
+        $('tableNumber').focus();
+      });
+      
+      $('callWaiter').addEventListener('click', () => {
+        let table = $('tableNumber').value.trim();
+        if (!table) {
+          $('waiterStatus').style.color = 'var(--rose)';
+          $('waiterStatus').textContent = 'Enter table number first.';
+          return;
+        }
+        let req = saveServiceRequest('Call Waiter', 'Table: ' + table);
+        $('waiterStatus').style.color = 'var(--forest)';
+        $('waiterStatus').textContent = 'Request sent. Ticket: ' + req.id;
+        setTimeout(() => $('waiterStatus').textContent = '', 5000);
+      });
+      
+      $('requestBill').addEventListener('click', () => {
+        let table = $('billTable').value.trim();
+        if (!table) {
+          $('billStatus').style.color = 'var(--rose)';
+          $('billStatus').textContent = 'Enter table number first.';
+          return;
+        }
+        let req = saveServiceRequest('Request Bill', 'Table: ' + table);
+        $('billStatus').style.color = 'var(--forest)';
+        $('billStatus').textContent = 'Request sent. Ticket: ' + req.id;
+        setTimeout(() => $('billStatus').textContent = '', 5000);
+      });
+      
+      $('copyWifi').addEventListener('click', () => {
+        navigator.clipboard.writeText($('wifiPassword').value).then(() => {
+          $('wifiStatus').style.color = 'var(--forest)';
+          $('wifiStatus').textContent = ui('wifiCopied');
+          setTimeout(() => $('wifiStatus').textContent = '', 3000);
+        });
+      });
+      
+      $('sendQuestion').addEventListener('click', () => {
+        let table = $('questionTable').value.trim() || 'Room/Table not specified';
+        let type = $('questionType').value;
+        let text = $('serviceQuestion').value.trim();
+        if (!text) {
+          $('questionStatus').style.color = 'var(--rose)';
+          $('questionStatus').textContent = 'Please type a question.';
+          return;
+        }
+        let req = saveServiceRequest('Service Request: ' + type, `Table/Room: ${table}\nQuestion: ${text}`);
+        $('questionStatus').style.color = 'var(--forest)';
+        $('questionStatus').textContent = 'Question sent. Ticket: ' + req.id;
+        $('serviceQuestion').value = '';
+        setTimeout(() => $('questionStatus').textContent = '', 5000);
+      });
+      
+      $('addReview').addEventListener('click', () => {
+        let name = $('reviewName').value.trim() || 'Guest';
+        let rating = parseInt($('reviewRating').value);
+        let text = $('reviewText').value.trim();
+        if (!text) {
+          alert('Please enter review feedback.');
+          return;
+        }
+        reviews.unshift({ name, rating, text });
+        saveReviews();
+        renderReviews();
+        $('reviewName').value = '';
+        $('reviewText').value = '';
+        showGuestToast('Review Posted', 'Thank you for your rating!');
+      });
+      
+      $('sendOrder').addEventListener('click', () => {
+        let t = totals();
+        if (!t.items) {
+          $('orderStatus').style.color = 'var(--rose)';
+          $('orderStatus').textContent = 'Cart is empty.';
+          return;
+        }
+        let details = currentOrderLines();
+        let mode = $('orderMode').value;
+        let addr = $('deliveryAddress').value.trim();
+        let fullDetails = `Mode: ${mode}${addr ? ` (Address: ${addr})` : ''}\nItems: ${details}`;
+        
+        let req = saveServiceRequest('Order Placed', fullDetails);
+        $('orderStatus').style.color = 'var(--forest)';
+        $('orderStatus').textContent = 'Order Placed! Ticket: ' + req.id;
+        
+        cart.clear();
+        renderCart();
+        setTimeout(() => {
+          $('orderStatus').textContent = '';
+          closeCart();
+        }, 3000);
+      });
+      
+      window.addEventListener('scroll', () => {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        let bar = $('scrollProgress');
+        if (bar) bar.style.width = scrolled + '%';
+      });
+      
+      if (serviceChannel) {
+        serviceChannel.onmessage = (event) => {
+          let updatedTicket = event.data;
+          if (updatedTicket && updatedTicket.id) {
+            let list = serviceRequests();
+            let index = list.findIndex(t => t.id === updatedTicket.id);
+            if (index !== -1 && list[index].status !== updatedTicket.status) {
+              list[index].status = updatedTicket.status;
+              localStorage.setItem(serviceKey, JSON.stringify(list));
+              renderDashboard();
+            }
+          }
+        };
+      }
+      
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom').forEach(el => revealObserver.observe(el));
+      
+      setLang('en');
+    });
   </script>
-  <div class="floating-toast" id="guestToast" role="status" aria-live="polite"><strong>Request sent</strong><span>Your service request has reached the staff desk.</span></div>
 </body>
 </html>
