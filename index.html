@@ -383,6 +383,34 @@
     <span>Message description</span>
   </div>
 
+  <!-- Firebase connection added. Original website code below is unchanged. -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqc-6bI5FZrEkUtuUY1HIJ2G-ZgfRM_fo",
+      authDomain: "my-fire-base-project-fa237.firebaseapp.com",
+      projectId: "my-fire-base-project-fa237",
+      storageBucket: "my-fire-base-project-fa237.firebasestorage.app",
+      messagingSenderId: "628951282378",
+      appId: "1:628951282378:web:1e4a2440c41848d0e4ba33",
+      measurementId: "G-DRJH5JGQQ0"
+    };
+
+    const firebaseApp = initializeApp(firebaseConfig);
+    const firebaseAuth = getAuth(firebaseApp);
+    const firebaseDb = getFirestore(firebaseApp);
+
+    // Firebase connection is exposed without changing the existing website script.
+    window.baronFirebase = { app: firebaseApp, auth: firebaseAuth, db: firebaseDb };
+
+    signInAnonymously(firebaseAuth).catch((error) => {
+      console.error("Baron Hotel Firebase authentication failed:", error);
+    });
+  </script>
+
   <script>
     /* -------------------- Data & Helpers -------------------- */
     const translations = {
