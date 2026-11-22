@@ -179,6 +179,76 @@
     @media(max-width:980px){.feature-grid,.section-head{grid-template-columns:1fr}}
     @media(max-width:640px){.split{grid-template-columns:1fr}}
   </style>
+
+  <!-- ===== ADDED: EXTRA ANIMATIONS (overrides earlier rules, nothing removed) ===== -->
+  <style id="baron-animations">
+    .scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:100;background:linear-gradient(90deg,#bd8427,#f6d37a);transform:scaleX(0);transform-origin:left;pointer-events:none}
+
+    .hero-glow{animation:glowFloat 9s ease-in-out infinite!important}
+    h1{background:linear-gradient(110deg,#f8d676 35%,#fff6d6 50%,#f8d676 65%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+       animation:titleIn 1.1s .25s var(--ease) both,titleShine 6s 1.6s ease-in-out infinite!important}
+    .hero-inner{will-change:transform}
+
+    .action,.add-btn,.secondary-btn,.primary-btn,.checkout-btn{position:relative;overflow:hidden}
+    .action.primary::after,.checkout-btn::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:btnShine 4.5s 2s ease-in-out infinite;pointer-events:none}
+    .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rippleOut .6s ease-out forwards;pointer-events:none}
+
+    .chip{transition:background .25s,color .25s,border-color .25s,transform .2s var(--ease)}
+    .chip:hover{transform:translateY(-2px)}
+    .chip.active{animation:chipPop .35s var(--ease)}
+
+    .card{transition:transform .35s var(--ease),border-color .25s,box-shadow .35s}
+    .card:hover{transform:translateY(-6px)!important}
+    .image-wrap img{transition:transform .8s var(--ease)}
+    .card:hover .image-wrap img{transform:scale(1.07)!important}
+    .badge{transition:transform .3s var(--ease)}
+    .card:hover .badge{transform:translateY(-2px) scale(1.05)}
+
+    .cart-count.bump,#toolbarTotal.bump{animation:bump .45s var(--ease)}
+    .cart-toggle.wiggle{animation:wiggle .5s var(--ease)}
+    .cart-toggle{animation:toggleIn .7s 1.2s var(--ease) both}
+    .toolbar{transition:box-shadow .3s}
+    .toolbar.stuck{box-shadow:0 10px 30px rgba(21,20,19,.1)}
+
+    .feature-grid .panel{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease),border-color .25s,box-shadow .3s}
+    .feature-grid.visible .panel{opacity:1;transform:none}
+    .feature-grid.visible .panel:nth-child(1){transition-delay:.05s}
+    .feature-grid.visible .panel:nth-child(2){transition-delay:.15s}
+    .feature-grid.visible .panel:nth-child(3){transition-delay:.25s}
+    .feature-grid.visible .panel:nth-child(4){transition-delay:.35s}
+    .feature-grid.visible .panel:nth-child(5){transition-delay:.45s}
+    .feature-grid.visible .panel:nth-child(6){transition-delay:.55s}
+    .feature-grid.visible .panel:nth-child(7){transition-delay:.65s}
+    .feature-grid.visible .panel:hover{transform:translateY(-4px);border-color:#d9c39a;box-shadow:0 14px 34px rgba(21,20,19,.09);transition-delay:0s}
+
+    .status:not(:empty){animation:statusIn .4s var(--ease)}
+    .pill{transition:transform .2s var(--ease),background .2s}
+    .pill:hover{transform:translateY(-2px);background:#efe4cc}
+    .footer a{transition:color .2s}
+    .footer a:hover{color:var(--gold-soft)}
+    .footer-inner>div{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .footer.visible .footer-inner>div{opacity:1;transform:none}
+    .footer.visible .footer-inner>div:nth-child(2){transition-delay:.12s}
+    .footer.visible .footer-inner>div:nth-child(3){transition-delay:.24s}
+
+    @keyframes glowFloat{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.55}50%{transform:translate3d(-30px,26px,0) scale(1.12);opacity:.95}}
+    @keyframes titleShine{0%,60%{background-position:130% 0}100%{background-position:-60% 0}}
+    @keyframes btnShine{0%,70%{left:-70%}100%{left:130%}}
+    @keyframes rippleOut{to{transform:scale(4);opacity:0}}
+    @keyframes chipPop{0%{transform:scale(.92)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+    @keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.3)}100%{transform:scale(1)}}
+    @keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+    @keyframes toggleIn{from{opacity:0;transform:translateY(40px) scale(.8)}to{opacity:1;transform:none}}
+    @keyframes statusIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+  </style>
+
+  <!-- ===== ADDED: small styles for the order fixes ===== -->
+  <style id="baron-fix-styles">
+    .cart-line-price small{display:block;color:var(--muted);font-weight:600;font-size:.78rem}
+    .qty strong{min-width:22px;text-align:center}
+    #orderTable{margin-bottom:2px}
+    .checkout-btn:disabled{opacity:.6;cursor:wait}
+  </style>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -409,6 +479,25 @@
     signInAnonymously(firebaseAuth).catch((error) => {
       console.error("Baron Hotel Firebase authentication failed:", error);
     });
+  </script>
+
+  <!-- ===== ADDED: sends orders / service requests to Firestore (reads your connection above) ===== -->
+  <script type="module" id="baron-orders-firebase">
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+    const { auth, db } = window.baronFirebase;
+    const signedIn = new Promise(resolve => {
+      const off = onAuthStateChanged(auth, user => { if (user) { off(); resolve(user); } });
+    });
+
+    // window.baronSend('orders', {...}) saves one document and returns its id
+    window.baronSend = async (collectionName, data) => {
+      const timeout = new Promise((_, rej) => setTimeout(() => rej(new Error('Firebase sign-in timed out')), 10000));
+      await Promise.race([signedIn, timeout]);
+      const ref = await addDoc(collection(db, collectionName), { ...data, createdAt: serverTimestamp() });
+      return ref.id;
+    };
   </script>
 
   <script>
@@ -663,6 +752,237 @@
     renderMenu();
     renderCart();
     applyFullLanguage();
+  </script>
+
+  <!-- ===== ADDED: ORDER FIXES (cart view, quantities, send to Firestore) ===== -->
+  <script id="baron-fixes">
+  (function(){
+    /* 1) Missing text keys (they were showing as raw words like "add" or "search") */
+    Object.assign(translations.en,{
+      top:'Top pick',contactless:'Contactless',available:'Available',add:'Add',
+      noResults:'No items match your search.',cartEmptyTitle:'Your order is empty',cartEmptyText:'Add items from the menu to start.',
+      search:'Search pizza, coffee, juice...',topRated:'Top Rated',low:'Price Low to High',high:'Price High to Low',
+      allPrices:'All prices',under100:'Under 100 ETB',p100to200:'100-200 ETB',over200:'200+ ETB',
+      delivery:'Delivery address or room number',table:'Table number',billTable:'Table number',
+      callWaiterBtn:'Call Waiter',requestBillBtn:'Request Bill',copy:'Copy',
+      questionTable:'Table or room number',question:'Write your question or request',sendQuestion:'Send Service Question',
+      order:'Order',sendOrder:'Send Contactless Order',yourOrder:'Your Order',orderType:'Order type',items:'Items',total:'Total',
+      orderModes:['Dine-in','Takeaway','Delivery'],wifiLabel:'WiFi Password',networkLabel:'Network',
+      hours:'Open daily: 7:00 AM - 11:00 PM',generalQuestion:'General question',extraNapkins:'Extra napkins',
+      waterRefill:'Water refill',cleanTable:'Clean table',allergyQuestion:'Food allergy question',parkingHelp:'Parking help',
+      modeSelected:'selected',footerCopy:'Luxury taste, fresh food, and contactless service in Harar Shash.',
+      social:'Social Media',hoursLabel:'Opening Hours',wifiCopied:'WiFi password copied.',
+      emptyCartMsg:'Your order is empty.',needAddress:'Please enter a delivery address or room number.',
+      needTable:'Please enter your table or room number.',needQuestion:'Please write your question first.',
+      sending:'Sending your order...',orderSent:'Order sent! The staff received it.',
+      sendFailed:'Could not send. Please try again or call a waiter.',
+      loyaltyText:'Add 5 items to unlock a 10% reward.',rewardUnlocked:'10% reward unlocked! Show this to your waiter.'
+    });
+    Object.assign(translations.am,{
+      top:'ተወዳጅ',contactless:'ንክኪ አልባ',available:'ይገኛል',add:'ጨምር',
+      noResults:'ምንም ምግብ አልተገኘም።',cartEmptyTitle:'ትዕዛዝዎ ባዶ ነው',cartEmptyText:'ለመጀመር ከሜኑ ምግብ ይጨምሩ።',
+      search:'ፒዛ፣ ቡና፣ ጁስ ይፈልጉ...',topRated:'ከፍተኛ ደረጃ',low:'ዋጋ ከዝቅተኛ ወደ ከፍተኛ',high:'ዋጋ ከከፍተኛ ወደ ዝቅተኛ',
+      allPrices:'ሁሉም ዋጋ',under100:'ከ100 ብር በታች',p100to200:'100-200 ብር',over200:'ከ200 ብር በላይ',
+      delivery:'የማድረሻ አድራሻ ወይም የክፍል ቁጥር',table:'የጠረጴዛ ቁጥር',billTable:'የጠረጴዛ ቁጥር',
+      callWaiterBtn:'አስተናጋጅ ጥራ',requestBillBtn:'ቢል ጠይቅ',copy:'ቅዳ',
+      questionTable:'የጠረጴዛ ወይም ክፍል ቁጥር',question:'ጥያቄዎን ወይም ጥያቄዎን ይጻፉ',sendQuestion:'ጥያቄ ላክ',
+      order:'ትዕዛዝ',sendOrder:'ትዕዛዝ ላክ',yourOrder:'ትዕዛዝዎ',orderType:'የትዕዛዝ አይነት',items:'ዕቃዎች',total:'ድምር',
+      orderModes:['በሆቴል ውስጥ','ቴክአዌይ','ዴሊቨሪ'],wifiLabel:'የWiFi የይለፍ ቃል',networkLabel:'ኔትወርክ',
+      hours:'በየቀኑ ክፍት: 7:00 ጠዋት - 11:00 ማታ',generalQuestion:'ጠቅላላ ጥያቄ',extraNapkins:'ተጨማሪ ናፕኪን',
+      waterRefill:'ውሃ ሙላ',cleanTable:'ጠረጴዛ አጽዳ',allergyQuestion:'የምግብ አለርጂ ጥያቄ',parkingHelp:'የመኪና ማቆሚያ እርዳታ',
+      modeSelected:'ተመርጧል',footerCopy:'ምርጥ ጣዕም፣ ትኩስ ምግብ እና ንክኪ አልባ አገልግሎት በሐረር ሸጋ።',
+      social:'ማህበራዊ ሚዲያ',hoursLabel:'የስራ ሰዓት',wifiCopied:'የWiFi የይለፍ ቃል ተቀድቷል።',
+      emptyCartMsg:'ትዕዛዝዎ ባዶ ነው።',needAddress:'እባክዎ የማድረሻ አድራሻ ወይም የክፍል ቁጥር ያስገቡ።',
+      needTable:'እባክዎ የጠረጴዛ ወይም የክፍል ቁጥር ያስገቡ።',needQuestion:'እባክዎ መጀመሪያ ጥያቄዎን ይጻፉ።',
+      sending:'ትዕዛዝዎ እየተላከ ነው...',orderSent:'ትዕዛዝዎ ተልኳል! ሰራተኞች ተቀብለዋል።',
+      sendFailed:'መላክ አልተቻለም። እባክዎ እንደገና ይሞክሩ ወይም አስተናጋጅ ይጥሩ።',
+      loyaltyText:'ለ10% ሽልማት 5 ዕቃዎች ይጨምሩ።',rewardUnlocked:'10% ሽልማት ተከፍቷል! ለአስተናጋጅ ያሳዩ።'
+    });
+
+    const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const MODES_EN = ['Dine-in','Takeaway','Delivery'];
+
+    /* 2) Cart panel was never defined (this is why the cart did not open) */
+    window.cartPanel = $('cart');
+    new MutationObserver(()=>{
+      const o = cartPanel.classList.contains('open');
+      cartPanel.setAttribute('aria-hidden', o ? 'false' : 'true');
+      $('cartToggle').setAttribute('aria-expanded', o ? 'true' : 'false');
+    }).observe(cartPanel,{attributes:true,attributeFilter:['class']});
+    $('openCartTop').addEventListener('click',()=>{cartPanel.classList.add('open');scrim.classList.add('open');});
+    $('openWaiterHero').addEventListener('click',()=>{
+      const t=$('tableNumber'); t.scrollIntoView({behavior:'smooth',block:'center'});
+      setTimeout(()=>t.focus({preventScroll:true}),600);
+    });
+
+    /* table / room input inside the cart */
+    const tbl=document.createElement('input');
+    tbl.id='orderTable'; tbl.placeholder=ui('questionTable');
+    $('sendOrder').parentNode.insertBefore(tbl,$('sendOrder'));
+
+    /* 3) Cart that shows what the guest chose, with + / - buttons */
+    function updateLoyalty(count){
+      $('loyaltyProgress').style.width=Math.min(100,count/5*100)+'%';
+      $('rewardBadge').textContent=Math.min(count,5)+' / 5';
+      $('loyaltyText').textContent=count>=5?ui('rewardUnlocked'):ui('loyaltyText');
+    }
+    renderCart = function(){
+      const count=[...cart.values()].reduce((a,i)=>a+i.qty,0);
+      $('cartCount').textContent=count;
+      $('toolbarTotal').textContent=`${money(cartTotal())} ETB`;
+      $('summaryItems').textContent=count;
+      $('summaryTotal').textContent=money(cartTotal());
+      $('cartMode').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent;
+      updateLoyalty(count);
+      cartItems.innerHTML='';
+      if(count===0){
+        cartItems.innerHTML=`<div class="empty-state"><div><strong>${ui('cartEmptyTitle')}</strong><p>${ui('cartEmptyText')}</p></div></div>`;
+        return;
+      }
+      cart.forEach((item,name)=>{
+        const m=menu.find(i=>i.name===name)||{name};
+        const line=document.createElement('div');
+        line.className='cart-line';
+        line.innerHTML=
+          `<div><div class="cart-line-title">${esc(itemName(m))}</div>
+             <div class="qty">
+               <button type="button" data-act="dec" data-name="${esc(name)}" aria-label="-">−</button>
+               <strong>${item.qty}</strong>
+               <button type="button" data-act="inc" data-name="${esc(name)}" aria-label="+">+</button>
+             </div></div>
+           <div class="cart-line-price">${money(item.price*item.qty)} ETB<small>${money(item.price)} × ${item.qty}</small></div>`;
+        cartItems.appendChild(line);
+      });
+    };
+    cartItems.addEventListener('click',e=>{
+      const b=e.target.closest('button[data-act]'); if(!b) return;
+      const cur=cart.get(b.dataset.name); if(!cur) return;
+      if(b.dataset.act==='inc') cur.qty++;
+      else { cur.qty--; if(cur.qty<=0) cart.delete(b.dataset.name); }
+      renderCart();
+    });
+    $('orderMode').addEventListener('change',()=>{ $('cartMode').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent; });
+
+    /* option labels in the order-type select were being cut to single letters */
+    const _apply=applyFullLanguage;
+    applyFullLanguage=function(){
+      _apply();
+      [...$('orderMode').options].forEach((o,i)=>o.textContent=ui('orderModes')[i]);
+      $('modeStatus').textContent=$('orderMode').options[$('orderMode').selectedIndex].textContent+' '+ui('modeSelected')+'.';
+      $('orderTable').placeholder=ui('questionTable');
+    };
+
+    /* 4) Send the order to Firestore (the other website reads the "orders" collection) */
+    $('sendOrder').addEventListener('click',async()=>{
+      const status=$('orderStatus'), btn=$('sendOrder');
+      const count=[...cart.values()].reduce((a,i)=>a+i.qty,0);
+      if(!count){ status.textContent=ui('emptyCartMsg'); return; }
+      const modeEn=MODES_EN[$('orderMode').selectedIndex];
+      const table=$('orderTable').value.trim();
+      const address=$('deliveryAddress').value.trim();
+      if(modeEn==='Dine-in' && !table){ status.textContent=ui('needTable'); $('orderTable').focus(); return; }
+      if(modeEn==='Delivery' && !address){ status.textContent=ui('needAddress'); $('deliveryAddress').focus(); return; }
+
+      const code='ORD-'+Date.now().toString(36).toUpperCase();
+      const order={
+        orderCode:code, status:'New', source:'baron-menu', language:lang,
+        orderType:modeEn, table:table, deliveryAddress:address,
+        itemCount:count, total:cartTotal(), currency:'ETB',
+        rewardUnlocked:count>=5,
+        items:[...cart.entries()].map(([name,i])=>({name,qty:i.qty,unitPrice:i.price,lineTotal:i.price*i.qty}))
+      };
+      btn.disabled=true; status.textContent=ui('sending');
+      try{
+        if(!window.baronSend) throw new Error('Firebase not ready');
+        await window.baronSend('orders',order);
+        cart.clear(); renderCart();
+        $('orderTable').value='';
+        status.textContent=ui('orderSent')+' ('+code+')';
+        showGuestToast(ui('order'),ui('orderSent'));
+      }catch(err){
+        console.error('Baron order failed:',err);
+        status.textContent=ui('sendFailed');
+      }finally{ btn.disabled=false; }
+    });
+
+    /* 5) Waiter / bill / question requests also go to Firestore ("serviceRequests") */
+    const _save=saveServiceRequest;
+    saveServiceRequest=function(type,details){
+      const d=details||{};
+      if(!String(d.table||'').trim()){ showGuestToast(type,ui('needTable')); return null; }
+      if(type==='Service Question' && !String(d.text||'').trim()){ showGuestToast(type,ui('needQuestion')); return null; }
+      const req=_save(type,d);   // keeps your original local behaviour + toast
+      if(window.baronSend){
+        window.baronSend('serviceRequests',{ticketId:req.id,type,details:d,status:'New',source:'baron-menu',language:lang})
+          .catch(err=>{ console.error('Baron service request failed:',err); showGuestToast(type,ui('sendFailed')); });
+      }
+      return req;
+    };
+
+    /* re-render everything now that the missing text keys exist */
+    setLang(lang);
+  })();
+  </script>
+
+  <!-- ===== ADDED: EXTRA ANIMATIONS SCRIPT ===== -->
+  <script id="baron-animations-js">
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var bar = document.getElementById('scrollProgress');
+    var heroInner = document.querySelector('.hero-inner');
+    var hero = document.querySelector('.hero');
+    var toolbar = document.querySelector('.toolbar');
+    var ticking = false;
+
+    function onScroll(){
+      var y = window.scrollY || 0;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if(bar) bar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+      if(heroInner && hero && !reduce && y < hero.offsetHeight){
+        heroInner.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+        heroInner.style.opacity = Math.max(0, 1 - y / (hero.offsetHeight * 0.9));
+      }
+      if(toolbar) toolbar.classList.toggle('stuck', hero && y > hero.offsetHeight - 10);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+    }, {passive:true});
+    onScroll();
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    var footer = document.querySelector('.footer');
+    if(footer) io.observe(footer);
+
+    document.addEventListener('click', function(e){
+      var b = e.target.closest('.add-btn,.action,.secondary-btn,.primary-btn,.checkout-btn');
+      if(!b || reduce) return;
+      var r = b.getBoundingClientRect();
+      var size = Math.max(r.width, r.height);
+      var s = document.createElement('span');
+      s.className = 'ripple';
+      s.style.width = s.style.height = size + 'px';
+      s.style.left = (e.clientX - r.left - size / 2) + 'px';
+      s.style.top = (e.clientY - r.top - size / 2) + 'px';
+      b.appendChild(s);
+      setTimeout(function(){ s.remove(); }, 650);
+    });
+
+    function bumpOnChange(id, extra){
+      var el = document.getElementById(id);
+      if(!el) return;
+      new MutationObserver(function(){
+        el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+        if(extra){ extra.classList.remove('wiggle'); void extra.offsetWidth; extra.classList.add('wiggle'); }
+      }).observe(el, {childList:true, characterData:true, subtree:true});
+    }
+    bumpOnChange('cartCount', document.getElementById('cartToggle'));
+    bumpOnChange('toolbarTotal');
+  })();
   </script>
 </body>
 </html>
